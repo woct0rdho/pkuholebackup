@@ -98,7 +98,9 @@ def parse_lines(line_list):
 
 
 def get_comment(post):
-    # if post['reply'] == 0:
+    # edited
+    # if post['reply'] != 0:
+    #     post['reply'] = 0
     #     return post
 
     request_success = False
@@ -156,6 +158,10 @@ def parse_file(filename):
 def write_posts(filename, posts):
     g = codecs.open(filename, 'w', 'utf-8')
     for post in posts:
+        # edited
+        # if post['reply'] == 0:
+        #     continue
+
         g.write('#p {} {} {} {}\n{}'.format(
             post['pid'],
             datetime.fromtimestamp(int(post['timestamp'])).strftime(
