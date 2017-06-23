@@ -172,7 +172,7 @@ if __name__ == '__main__':
     logging.getLogger('requests').setLevel(logging.WARNING)
 
     for root, dirs, files in os.walk(input_folder):
-        for file in files:
+        for file in sorted(files):
             logging.info(file)
             write_posts(
                 os.path.join(output_folder, file),
