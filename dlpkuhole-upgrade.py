@@ -98,8 +98,8 @@ def parse_lines(line_list):
 
 
 def get_comment(post):
-    if post['reply'] == 0:
-        return post
+    # if post['reply'] == 0:
+    #     return post
 
     request_success = False
     # 尝试连接10次
