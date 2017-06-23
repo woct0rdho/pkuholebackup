@@ -2,10 +2,12 @@
 
 import codecs
 import json
+import logging
 import os
 import random
 import re
 import requests
+import sys
 import time
 import user_agent
 from datetime import datetime
@@ -42,16 +44,17 @@ def parse_lines(line_list):
         ).fullmatch(line):
             if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
                 # 检测顺序错误的树洞
-                print('Recovered', now_post['pid'])
+                logging.info('Rec {}'.format(now_post['pid']))
                 post_list[-2] = now_post
             elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
                 # 检测重复的树洞
-                print('Duplicated', now_post['pid'])
+                logging.info('Dup {}'.format(now_post['pid']))
             elif len(post_list
                      ) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
                 # 检测缺少的树洞
                 # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-                print('Missed', now_post['pid'], post_list[-1]['pid'])
+                logging.info(
+                    'Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
                 for pid in range(post_list[-1]['pid'] - 1, now_post['pid'],
                                  -1):
                     post_list.append({
@@ -70,15 +73,15 @@ def parse_lines(line_list):
             now_post['text'] += line + '\n'
     if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
         # 检测顺序错误的树洞
-        print('Recovered', now_post['pid'])
+        logging.info('Rec {}'.format(now_post['pid']))
         post_list[-2] = now_post
     elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
         # 检测重复的树洞
-        print('Duplicated', now_post['pid'])
+        logging.info('Dup {}'.format(now_post['pid']))
     elif len(post_list) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
         # 检测缺少的树洞
         # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-        print('Missed', now_post['pid'], post_list[-1]['pid'])
+        logging.info('Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
         for pid in range(post_list[-1]['pid'] - 1, now_post['pid'], -1):
             post_list.append({
                 'pid': pid,
@@ -113,9 +116,9 @@ def get_comment(post):
             request_success = True
             break
         time.sleep(2 + random.random())
-        print('Post {} retry {}'.format(post['pid'], retry_count))
+        logging.info('Post {} retry {}'.format(post['pid'], retry_count))
     if not request_success:
-        print('Post {} request failed'.format(post['pid']))
+        logging.info('Post {} request failed'.format(post['pid']))
         return post
 
     time.sleep(0.1 + random.random() * 0.1)
@@ -123,8 +126,8 @@ def get_comment(post):
     data = json.loads(r.text)
     r.close()
     if data['code'] != 0:
-        print('Post {} get comment error:'.format(post['pid']))
-        print(data)
+        logging.info('Post {} get comment error:'.format(post['pid']))
+        logging.info(str(data))
         return post
 
     for comment in data['data']:
@@ -161,9 +164,14 @@ def write_posts(filename, posts):
 
 
 if __name__ == '__main__':
+    logging.getLogger().handlers = []
+    logging.basicConfig(
+        stream=sys.stdout,
+        level=logging.INFO,
+        format='%(asctime)s %(message)s')
     for root, dirs, files in os.walk(input_folder):
         for file in files:
-            print(file)
+            logging.info(file)
             write_posts(
                 os.path.join(output_folder, file),
                 parse_file(os.path.join(input_folder, file)))
