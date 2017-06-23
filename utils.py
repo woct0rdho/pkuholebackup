@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# post和comment的text以\n\n结尾
 
 import codecs
 import json
@@ -12,12 +13,35 @@ import time
 import user_agent
 from datetime import datetime
 
-cdname = os.path.dirname(__file__)
-input_folder = os.path.join(cdname, 'in')
-output_folder = os.path.join(cdname, 'archive')
+logging.getLogger().handlers = []
+logging.basicConfig(
+    stream=sys.stdout, level=logging.INFO, format='%(asctime)s %(message)s')
+logging.getLogger('requests').setLevel(logging.WARNING)
+
+
+def my_log(s):
+    logging.info(s)
 
 
 def parse_metadata(line):
+    t = line.split()
+    return {
+        'pid':
+        int(t[1]),
+        'timestamp':
+        datetime.strptime('{} {}'.format(t[2], t[3]),
+                          '%Y-%m-%d %H:%M:%S').timestamp(),
+        'likenum':
+        int(t[4]),
+        'reply':
+        int(t[5]),
+        'text':
+        '',
+        'comments': []
+    }
+
+
+def parse_metadata_old(line):
     t = line.split()
     return {
         'pid':
@@ -35,25 +59,70 @@ def parse_metadata(line):
     }
 
 
-def parse_lines(line_list):
+def parse_comment_metadata(line):
+    t = line.split()
+    return {
+        'cid':
+        int(t[1]),
+        'timestamp':
+        datetime.strptime('{} {}'.format(t[2], t[3]),
+                          '%Y-%m-%d %H:%M:%S').timestamp(),
+        'text':
+        ''
+    }
+
+
+def parse_file(filename):
+    f = codecs.open(filename, 'r', 'utf-8')
+    line_list = f.read().splitlines()
+    f.close()
     post_list = []
     now_post = parse_metadata(line_list[0])
+    now_comment = None
+    for line in line_list[1:]:
+        if line[:2] == '#p':
+            if now_comment:
+                now_post['comments'].append(now_comment)
+                now_comment = None
+            post_list.append(now_post)
+            now_post = parse_metadata(line)
+        elif line[:2] == '#c':
+            if now_comment:
+                now_post['comments'].append(now_comment)
+            now_comment = parse_comment_metadata(line)
+        else:
+            if now_comment:
+                now_comment['text'] += line + '\n'
+            else:
+                now_post['text'] += line + '\n'
+    if now_comment:
+        now_post['comments'].append(now_comment)
+    post_list.append(now_post)
+    return post_list
+
+
+def parse_file_old(filename):
+    f = codecs.open(filename, 'r', 'utf-8')
+    line_list = f.read().splitlines()
+    f.close()
+    post_list = []
+    now_post = parse_metadata_old(line_list[0])
     for line in line_list[1:]:
         if re.compile(
                 '[0-9]+ [0-9]+-[0-9]+-[0-9]+ [0-9]+:[0-9]+:[0-9]+ -?[0-9]+ -?[0-9]+'
         ).fullmatch(line):
             if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
                 # 检测顺序错误的树洞
-                logging.info('Rec {}'.format(now_post['pid']))
+                my_log('Rec {}'.format(now_post['pid']))
                 post_list[-2] = now_post
             elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
                 # 检测重复的树洞
-                logging.info('Dup {}'.format(now_post['pid']))
+                my_log('Dup {}'.format(now_post['pid']))
             elif len(post_list
                      ) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
                 # 检测缺少的树洞
                 # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-                logging.info(
+                my_log(
                     'Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
                 for pid in range(post_list[-1]['pid'] - 1, now_post['pid'],
                                  -1):
@@ -68,20 +137,20 @@ def parse_lines(line_list):
                 post_list.append(now_post)
             else:
                 post_list.append(now_post)
-            now_post = parse_metadata(line)
+            now_post = parse_metadata_old(line)
         else:
             now_post['text'] += line + '\n'
     if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
         # 检测顺序错误的树洞
-        logging.info('Rec {}'.format(now_post['pid']))
+        my_log('Rec {}'.format(now_post['pid']))
         post_list[-2] = now_post
     elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
         # 检测重复的树洞
-        logging.info('Dup {}'.format(now_post['pid']))
+        my_log('Dup {}'.format(now_post['pid']))
     elif len(post_list) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
         # 检测缺少的树洞
         # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-        logging.info('Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
+        my_log('Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
         for pid in range(post_list[-1]['pid'] - 1, now_post['pid'], -1):
             post_list.append({
                 'pid': pid,
@@ -97,12 +166,23 @@ def parse_lines(line_list):
     return post_list
 
 
-def get_comment(post):
-    # edited
-    # if post['reply'] != 0:
-    #     post['reply'] = 0
-    #     return post
+def write_posts(filename, posts):
+    g = codecs.open(filename, 'w', 'utf-8')
+    for post in posts:
+        g.write('#p {} {} {} {}\n{}'.format(
+            post['pid'],
+            datetime.fromtimestamp(int(post['timestamp'])).strftime(
+                '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
+                    'text']))
+        for comment in post['comments']:
+            g.write('#c {} {}\n{}'.format(
+                comment['cid'],
+                datetime.fromtimestamp(int(comment['timestamp'])).strftime(
+                    '%Y-%m-%d %H:%M:%S'), comment['text']))
+    g.close()
 
+
+def get_comment(post):
     request_success = False
     # 尝试连接10次
     for retry_count in range(10):
@@ -118,9 +198,9 @@ def get_comment(post):
             request_success = True
             break
         time.sleep(2 + random.random())
-        logging.info('Post {} retry {}'.format(post['pid'], retry_count))
+        my_log('Post {} retry {}'.format(post['pid'], retry_count))
     if not request_success:
-        logging.info('Post {} request failed'.format(post['pid']))
+        my_log('Post {} request failed'.format(post['pid']))
         return post
 
     time.sleep(0.5 + random.random() * 0.5)
@@ -129,63 +209,20 @@ def get_comment(post):
         data = json.loads(r.text)
         r.close()
     except Exception as e:
-        logging.info('Post {} parse json error:'.format(post['pid']))
-        logging.info(str(e))
+        my_log('Post {} parse json error:'.format(post['pid']))
+        my_log(str(e))
         return post
 
     if data['code'] != 0:
-        logging.info('Post {} get comment error:'.format(post['pid']))
-        logging.info(str(data))
+        my_log('Post {} get comment error:'.format(post['pid']))
+        my_log(str(data))
         return post
 
     for comment in data['data']:
         post['comments'].append({
             'cid': int(comment['cid']),
             'timestamp': int(comment['timestamp']),
-            'text': comment['text']
+            'text': comment['text'] + '\n\n'
         })
     post['reply'] = len(post['comments'])
     return post
-
-
-def parse_file(filename):
-    f = codecs.open(filename, 'r', 'utf-8')
-    line_list = f.read().splitlines()
-    f.close()
-    return map(get_comment, parse_lines(line_list))
-
-
-def write_posts(filename, posts):
-    g = codecs.open(filename, 'w', 'utf-8')
-    for post in posts:
-        # edited
-        # if post['reply'] == 0:
-        #     continue
-
-        g.write('#p {} {} {} {}\n{}'.format(
-            post['pid'],
-            datetime.fromtimestamp(int(post['timestamp'])).strftime(
-                '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
-                    'text']))
-        for comment in post['comments']:
-            g.write('#c {} {}\n{}\n\n'.format(
-                comment['cid'],
-                datetime.fromtimestamp(int(comment['timestamp'])).strftime(
-                    '%Y-%m-%d %H:%M:%S'), comment['text']))
-    g.close()
-
-
-if __name__ == '__main__':
-    logging.getLogger().handlers = []
-    logging.basicConfig(
-        stream=sys.stdout,
-        level=logging.INFO,
-        format='%(asctime)s %(message)s')
-    logging.getLogger('requests').setLevel(logging.WARNING)
-
-    for root, dirs, files in os.walk(input_folder):
-        for file in sorted(files):
-            logging.info(file)
-            write_posts(
-                os.path.join(output_folder, file),
-                parse_file(os.path.join(input_folder, file)))

@@ -1,3 +1,7 @@
+*.pyc
+__pycache__
 in*
 log*
+out*
+test*
 tmp*
