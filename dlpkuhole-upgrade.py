@@ -121,7 +121,7 @@ def get_comment(post):
         logging.info('Post {} request failed'.format(post['pid']))
         return post
 
-    time.sleep(0.1 + random.random() * 0.1)
+    time.sleep(0.5 + random.random() * 0.5)
     r.encoding = 'utf-8'
     try:
         data = json.loads(r.text)
