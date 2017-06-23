@@ -169,6 +169,8 @@ if __name__ == '__main__':
         stream=sys.stdout,
         level=logging.INFO,
         format='%(asctime)s %(message)s')
+    logging.getLogger('requests').setLevel(logging.WARNING)
+
     for root, dirs, files in os.walk(input_folder):
         for file in files:
             logging.info(file)
