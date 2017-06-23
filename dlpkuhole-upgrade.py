@@ -123,8 +123,14 @@ def get_comment(post):
 
     time.sleep(0.1 + random.random() * 0.1)
     r.encoding = 'utf-8'
-    data = json.loads(r.text)
-    r.close()
+    try:
+        data = json.loads(r.text)
+        r.close()
+    except Exception as e:
+        logging.info('Post {} parse json error:'.format(post['pid']))
+        logging.info(str(e))
+        return post
+
     if data['code'] != 0:
         logging.info('Post {} get comment error:'.format(post['pid']))
         logging.info(str(data))
