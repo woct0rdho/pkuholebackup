@@ -14,4 +14,4 @@ if __name__ == '__main__':
             write_posts(
                 os.path.join(output_folder, file),
                 map(get_comment,
-                    parse_file_old(os.path.join(input_folder, file))))
+                    read_posts_old(os.path.join(input_folder, file))))

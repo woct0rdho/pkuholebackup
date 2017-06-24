@@ -72,7 +72,7 @@ def parse_comment_metadata(line):
     }
 
 
-def parse_file(filename):
+def read_posts(filename):
     f = codecs.open(filename, 'r', 'utf-8')
     line_list = f.read().splitlines()
     f.close()
@@ -101,7 +101,7 @@ def parse_file(filename):
     return post_list
 
 
-def parse_file_old(filename):
+def read_posts_old(filename):
     f = codecs.open(filename, 'r', 'utf-8')
     line_list = f.read().splitlines()
     f.close()
@@ -225,4 +225,9 @@ def get_comment(post):
             'text': comment['text'] + '\n\n'
         })
     post['reply'] = len(post['comments'])
+    return post
+
+
+def clean_comment(post):
+    post['reply'] = 0
     return post
