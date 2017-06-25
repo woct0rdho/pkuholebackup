@@ -72,10 +72,29 @@ def parse_comment_metadata(line):
     }
 
 
+def check_lock(filename):
+    while os.path.exists(filename):
+        time.sleep(0.01)
+
+
+def add_lock(filename):
+    if not os.path.exists(filename):
+        open(filename, 'w').close()
+
+
+def release_lock(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+
+
 def read_posts(filename):
+    check_lock(filename + '.readlock')
+    add_lock(filename + '.writelock')
     f = codecs.open(filename, 'r', 'utf-8')
     line_list = f.read().splitlines()
     f.close()
+    release_lock(filename + '.writelock')
+
     post_list = []
     now_post = parse_metadata(line_list[0])
     now_comment = None
@@ -167,6 +186,9 @@ def read_posts_old(filename):
 
 
 def write_posts(filename, posts):
+    check_lock(filename + '.writelock')
+    add_lock(filename + '.readlock')
+    add_lock(filename + '.writelock')
     g = codecs.open(filename, 'w', 'utf-8')
     for post in posts:
         g.write('#p {} {} {} {}\n{}'.format(
@@ -180,6 +202,8 @@ def write_posts(filename, posts):
                 datetime.fromtimestamp(int(comment['timestamp'])).strftime(
                     '%Y-%m-%d %H:%M:%S'), comment['text']))
     g.close()
+    release_lock(filename + '.readlock')
+    release_lock(filename + '.writelock')
 
 
 def get_comment(post):
