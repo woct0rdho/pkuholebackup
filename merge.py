@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import os
 from utils import *
 
 cdname = os.path.dirname(__file__)

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import os
 from utils import *
 
 cdname = os.path.dirname(__file__)
@@ -34,7 +33,7 @@ if __name__ == '__main__':
     finish = False
     page = 1
     while True:
-        my_log('Page %d' % page)
+        my_log('Page {}'.format(page))
         try:
             r = requests.get(
                 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getlist&p={}'.
@@ -42,19 +41,17 @@ if __name__ == '__main__':
                 headers={'User-Agent': user_agent.generate_user_agent()},
                 timeout=5)
         except Exception as e:
-            my_log('Request error:')
-            my_log(str(e))
+            my_log('Request error: {}'.format(e))
             exit()
 
-        time.sleep(0.5 + random.random() * 0.5)
         r.encoding = 'utf-8'
         try:
-            data = json.loads(r.text)
+            data = r.json()
             r.close()
         except Exception as e:
-            my_log('Parse json error:')
-            my_log(str(e))
+            my_log('Parse json error: {}'.format(e))
             exit()
+        time.sleep(0.5 + random.random() * 0.5)
 
         for post in data['data']:
             if int(post['pid']) <= last_pid:

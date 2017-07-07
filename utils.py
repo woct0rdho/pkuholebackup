@@ -2,7 +2,6 @@
 # post和comment的text以\n\n结尾
 
 import codecs
-import json
 import logging
 import os
 import random
@@ -11,7 +10,7 @@ import requests
 import sys
 import time
 import user_agent
-from datetime import datetime
+from datetime import date, datetime, timedelta
 
 logging.getLogger().handlers = []
 logging.basicConfig(
@@ -230,16 +229,14 @@ def get_comment(post):
     time.sleep(0.5 + random.random() * 0.5)
     r.encoding = 'utf-8'
     try:
-        data = json.loads(r.text)
+        data = r.json()
         r.close()
     except Exception as e:
-        my_log('Post {} parse json error:'.format(post['pid']))
-        my_log(str(e))
+        my_log('Post {} parse json error: {}'.format(post['pid'], e))
         return post
 
     if data['code'] != 0:
-        my_log('Post {} get comment error:'.format(post['pid']))
-        my_log(str(data))
+        my_log('Post {} get comment error: {}'.format(post['pid'], data))
         return post
 
     for comment in data['data']:

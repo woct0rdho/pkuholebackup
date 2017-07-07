@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-import os
-from datetime import date, datetime, timedelta
 from utils import *
 
 cdname = os.path.dirname(__file__)
