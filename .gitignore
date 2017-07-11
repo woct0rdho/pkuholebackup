@@ -1,8 +1,7 @@
 *.pyc
+*.readlock
+*.writelock
 __pycache__
-in*
 log*
-out*
 pkuholebak.txt
-test*
-tmp*
+
