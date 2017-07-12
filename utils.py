@@ -188,6 +188,9 @@ def write_posts(filename, posts):
     check_lock(filename + '.writelock')
     add_lock(filename + '.readlock')
     add_lock(filename + '.writelock')
+    dirname = os.path.dirname(filename)
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
     g = codecs.open(filename, 'w', 'utf-8')
     for post in posts:
         g.write('#p {} {} {} {}\n{}'.format(

@@ -26,12 +26,13 @@ if __name__ == '__main__':
         exit()
 
     write_posts(filename_bak, last_post_list)
-    last_pid = last_post_list[0]['pid']
-    my_log('Last pid: {}'.format(last_pid))
+    min_pid = last_post_list[0]['pid']
+    my_log('Last pid: {}'.format(min_pid))
 
     post_list = []
     finish = False
     page = 1
+    last_pid = -1
     while True:
         my_log('Page {}'.format(page))
         try:
@@ -54,11 +55,24 @@ if __name__ == '__main__':
         time.sleep(0.5 + random.random() * 0.5)
 
         for post in data['data']:
-            if int(post['pid']) <= last_pid:
+            pid = int(post['pid'])
+            if pid <= min_pid:
                 finish = True
                 break
+            if last_pid != -1 and pid < last_pid - 1:
+                my_log('Mis {} {}'.format(pid, last_pid))
+                for i in range(last_pid - 1, pid, -1):
+                    post_list.append({
+                        'pid': pid,
+                        'timestamp': now_post['timestamp'],
+                        'likenum': 0,
+                        'reply': -1,
+                        'text': '#MISSED\n\n',
+                        'comments': []
+                    })
+            last_pid = pid
             post_list.append({
-                'pid': int(post['pid']),
+                'pid': pid,
                 'timestamp': int(post['timestamp']),
                 'likenum': int(post['likenum']),
                 'reply': 0,
