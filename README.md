@@ -1,6 +1,10 @@
 # dlpkuhole2
-P大树洞备份第二代
+P大树洞备份 https://github.com/martinwu42/dlpkuhole2
+
+[点击查看最新树洞](https://github.com/martinwu42/dlpkuhole2/blob/master/pkuhole.txt)
+
+[点击查看历史树洞](https://github.com/martinwu42/dlpkuhole2/tree/master/archive)
 
 请合理使用 GitHub 的搜索功能
 
-由于备份评论的工作量过大，两天内的树洞目前不备份评论，两天前的树洞移至archive文件夹并备份评论
+由于备份评论的工作量过大，两天以上的树洞才能备份评论
