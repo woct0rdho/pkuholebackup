@@ -77,6 +77,9 @@ def check_lock(filename):
 
 
 def add_lock(filename):
+    dirname = os.path.dirname(filename)
+    if dirname and not os.path.exists(dirname):
+        os.makedirs(dirname)
     if not os.path.exists(filename):
         open(filename, 'w').close()
 
@@ -189,7 +192,7 @@ def write_posts(filename, posts):
     add_lock(filename + '.readlock')
     add_lock(filename + '.writelock')
     dirname = os.path.dirname(filename)
-    if not os.path.exists(dirname):
+    if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
     g = codecs.open(filename, 'w', 'utf-8')
     for post in posts:

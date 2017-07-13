@@ -10,9 +10,9 @@ archive_extname = '.txt'
 
 if __name__ == '__main__':
     min_date = datetime.combine(date.today(),
-                                datetime.min.time()) - timedelta(3)
+                                datetime.min.time()) - timedelta(4)
     min_timestamp = (datetime.combine(date.today(), datetime.min.time()) -
-                     timedelta(2)).timestamp()
+                     timedelta(3)).timestamp()
     archive_filename = os.path.join(
         archive_folder,
         min_date.strftime('%Y%m'),
@@ -31,4 +31,9 @@ if __name__ == '__main__':
             out_list2.append(post)
 
     write_posts(filename, out_list1)
-    write_posts(archive_filename, map(get_comment, out_list2))
+    my_log('Archive {}'.format(archive_filename))
+    try:
+        write_posts(archive_filename, map(get_comment, out_list2))
+    except Exception as e:
+        my_log('Error: {}'.format(e))
+        write_posts(filename, out_list1 + out_list2)
