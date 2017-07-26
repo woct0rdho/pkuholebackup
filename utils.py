@@ -97,6 +97,9 @@ def read_posts(filename):
     f.close()
     release_lock(filename + '.writelock')
 
+    if not line_list:
+        return []
+
     post_list = []
     now_post = parse_metadata(line_list[0])
     now_comment = None
