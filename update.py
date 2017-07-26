@@ -63,8 +63,8 @@ if __name__ == '__main__':
                 my_log('Mis {} {}'.format(pid, last_pid))
                 for i in range(last_pid - 1, pid, -1):
                     post_list.append({
-                        'pid': pid,
-                        'timestamp': now_post['timestamp'],
+                        'pid': i,
+                        'timestamp': post['timestamp'],
                         'likenum': 0,
                         'reply': -1,
                         'text': '#MISSED\n\n',
