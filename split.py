@@ -10,9 +10,9 @@ archive_extname = '.txt'
 
 if __name__ == '__main__':
     min_date = datetime.combine(date.today(),
-                                datetime.min.time()) - timedelta(12)
+                                datetime.min.time()) - timedelta(2)
     min_timestamp = (datetime.combine(date.today(), datetime.min.time()) -
-                     timedelta(11)).timestamp()
+                     timedelta(1)).timestamp()
     archive_filename = os.path.join(
         archive_folder,
         min_date.strftime('%Y%m'),
