@@ -7,12 +7,13 @@ filename = os.path.join(cdname, 'pkuhole.txt')
 archive_folder = os.path.join(cdname, 'archive')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'
+day_count = 2
 
 if __name__ == '__main__':
     min_date = datetime.combine(date.today(),
-                                datetime.min.time()) - timedelta(2)
+                                datetime.min.time()) - timedelta(day_count)
     min_timestamp = (datetime.combine(date.today(), datetime.min.time()) -
-                     timedelta(1)).timestamp()
+                     timedelta(day_count - 1)).timestamp()
     archive_filename = os.path.join(
         archive_folder,
         min_date.strftime('%Y%m'),
