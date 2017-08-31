@@ -232,8 +232,7 @@ def get_comment(post):
         time.sleep(2 + random.random())
         my_log('Post {} retry {}'.format(post['pid'], retry_count))
     if not request_success:
-        my_log('Post {} request failed'.format(post['pid']))
-        return post
+        raise Exception('Post {} request failed'.format(post['pid']))
 
     time.sleep(0.5 + random.random() * 0.5)
     r.encoding = 'utf-8'
