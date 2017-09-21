@@ -64,7 +64,7 @@ if __name__ == '__main__':
                 for i in range(last_pid - 1, pid, -1):
                     post_list.append({
                         'pid': i,
-                        'timestamp': post['timestamp'],
+                        'timestamp': int(post['timestamp']),
                         'likenum': 0,
                         'reply': -1,
                         'text': '#MISSED\n\n',

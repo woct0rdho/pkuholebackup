@@ -125,45 +125,7 @@ def read_posts(filename):
     return post_list
 
 
-def read_posts_old(filename):
-    f = codecs.open(filename, 'r', 'utf-8')
-    line_list = f.read().splitlines()
-    f.close()
-    post_list = []
-    now_post = parse_metadata_old(line_list[0])
-    for line in line_list[1:]:
-        if re.compile(
-                '[0-9]+ [0-9]+-[0-9]+-[0-9]+ [0-9]+:[0-9]+:[0-9]+ -?[0-9]+ -?[0-9]+'
-        ).fullmatch(line):
-            if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
-                # 检测顺序错误的树洞
-                my_log('Rec {}'.format(now_post['pid']))
-                post_list[-2] = now_post
-            elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
-                # 检测重复的树洞
-                my_log('Dup {}'.format(now_post['pid']))
-            elif len(post_list
-                     ) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
-                # 检测缺少的树洞
-                # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-                my_log(
-                    'Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
-                for pid in range(post_list[-1]['pid'] - 1, now_post['pid'],
-                                 -1):
-                    post_list.append({
-                        'pid': pid,
-                        'timestamp': now_post['timestamp'],
-                        'likenum': 0,
-                        'reply': -1,
-                        'text': '#MISSED\n\n',
-                        'comments': []
-                    })
-                post_list.append(now_post)
-            else:
-                post_list.append(now_post)
-            now_post = parse_metadata_old(line)
-        else:
-            now_post['text'] += line + '\n'
+def add_post_to_list_old(post_list, now_post):
     if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
         # 检测顺序错误的树洞
         my_log('Rec {}'.format(now_post['pid']))
@@ -187,6 +149,23 @@ def read_posts_old(filename):
         post_list.append(now_post)
     else:
         post_list.append(now_post)
+
+
+def read_posts_old(filename):
+    f = codecs.open(filename, 'r', 'utf-8')
+    line_list = f.read().splitlines()
+    f.close()
+    post_list = []
+    now_post = parse_metadata_old(line_list[0])
+    for line in line_list[1:]:
+        if re.compile(
+                '[0-9]+ [0-9]+-[0-9]+-[0-9]+ [0-9]+:[0-9]+:[0-9]+ -?[0-9]+ -?[0-9]+'
+        ).fullmatch(line):
+            add_post_to_list_old(post_list, now_post)
+            now_post = parse_metadata_old(line)
+        else:
+            now_post['text'] += line + '\n'
+    add_post_to_list_old(post_list, now_post)
     return post_list
 
 
