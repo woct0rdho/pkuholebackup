@@ -38,3 +38,4 @@ if __name__ == '__main__':
     except Exception as e:
         my_log('Error: {}'.format(e))
         write_posts(filename, out_list1 + out_list2)
+        force_remove(archive_filename)

@@ -7,6 +7,7 @@ import os
 import random
 import re
 import requests
+import signal
 import sys
 import time
 import user_agent
@@ -16,6 +17,14 @@ logging.getLogger().handlers = []
 logging.basicConfig(
     stream=sys.stdout, level=logging.INFO, format='%(asctime)s %(message)s')
 logging.getLogger('requests').setLevel(logging.WARNING)
+
+
+def sigint_handler(signal, frame):
+    logging.info('{} {}'.format(signal, frame))
+    raise Exception('Operation aborted')
+
+
+signal.signal(signal.SIGINT, sigint_handler)
 
 
 def my_log(s):
@@ -73,7 +82,7 @@ def parse_comment_metadata(line):
 
 def check_lock(filename):
     while os.path.exists(filename):
-        time.sleep(0.01)
+        time.sleep(0.001)
 
 
 def add_lock(filename):
@@ -92,9 +101,8 @@ def release_lock(filename):
 def read_posts(filename):
     check_lock(filename + '.readlock')
     add_lock(filename + '.writelock')
-    f = codecs.open(filename, 'r', 'utf-8')
-    line_list = f.read().splitlines()
-    f.close()
+    with codecs.open(filename, 'r', 'utf-8') as f:
+        line_list = f.read().splitlines()
     release_lock(filename + '.writelock')
 
     if not line_list:
@@ -152,9 +160,8 @@ def add_post_to_list_old(post_list, now_post):
 
 
 def read_posts_old(filename):
-    f = codecs.open(filename, 'r', 'utf-8')
-    line_list = f.read().splitlines()
-    f.close()
+    with codecs.open(filename, 'r', 'utf-8') as f:
+        line_list = f.read().splitlines()
     post_list = []
     now_post = parse_metadata_old(line_list[0])
     for line in line_list[1:]:
@@ -170,25 +177,24 @@ def read_posts_old(filename):
 
 
 def write_posts(filename, posts):
-    check_lock(filename + '.writelock')
-    add_lock(filename + '.readlock')
-    add_lock(filename + '.writelock')
     dirname = os.path.dirname(filename)
     if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
-    g = codecs.open(filename, 'w', 'utf-8')
-    for post in posts:
-        g.write('#p {} {} {} {}\n{}'.format(
-            post['pid'],
-            datetime.fromtimestamp(int(post['timestamp'])).strftime(
-                '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
-                    'text']))
-        for comment in post['comments']:
-            g.write('#c {} {}\n{}'.format(
-                comment['cid'],
-                datetime.fromtimestamp(int(comment['timestamp'])).strftime(
-                    '%Y-%m-%d %H:%M:%S'), comment['text']))
-    g.close()
+    check_lock(filename + '.writelock')
+    add_lock(filename + '.readlock')
+    add_lock(filename + '.writelock')
+    with codecs.open(filename, 'w', 'utf-8') as g:
+        for post in posts:
+            g.write('#p {} {} {} {}\n{}'.format(
+                post['pid'],
+                datetime.fromtimestamp(int(post['timestamp'])).strftime(
+                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
+                        'text']))
+            for comment in post['comments']:
+                g.write('#c {} {}\n{}'.format(
+                    comment['cid'],
+                    datetime.fromtimestamp(int(comment['timestamp'])).strftime(
+                        '%Y-%m-%d %H:%M:%S'), comment['text']))
     release_lock(filename + '.readlock')
     release_lock(filename + '.writelock')
 
@@ -239,3 +245,9 @@ def get_comment(post):
 def clean_comment(post):
     post['reply'] = 0
     return post
+
+
+def force_remove(filename):
+    os.remove(filename)
+    release_lock(filename + '.readlock')
+    release_lock(filename + '.writelock')
