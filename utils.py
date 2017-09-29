@@ -2,6 +2,7 @@
 # post和comment的text以\n\n结尾
 
 import codecs
+import filewithlock
 import logging
 import os
 import random
@@ -80,30 +81,9 @@ def parse_comment_metadata(line):
     }
 
 
-def check_lock(filename):
-    while os.path.exists(filename):
-        time.sleep(0.001)
-
-
-def add_lock(filename):
-    dirname = os.path.dirname(filename)
-    if dirname and not os.path.exists(dirname):
-        os.makedirs(dirname)
-    if not os.path.exists(filename):
-        open(filename, 'w').close()
-
-
-def release_lock(filename):
-    if os.path.exists(filename):
-        os.remove(filename)
-
-
 def read_posts(filename):
-    check_lock(filename + '.readlock')
-    add_lock(filename + '.writelock')
-    with codecs.open(filename, 'r', 'utf-8') as f:
+    with filewithlock.open(filename, 'r', 'utf-8') as f:
         line_list = f.read().splitlines()
-    release_lock(filename + '.writelock')
 
     if not line_list:
         return []
@@ -130,6 +110,7 @@ def read_posts(filename):
     if now_comment:
         now_post['comments'].append(now_comment)
     post_list.append(now_post)
+
     return post_list
 
 
@@ -162,6 +143,7 @@ def add_post_to_list_old(post_list, now_post):
 def read_posts_old(filename):
     with codecs.open(filename, 'r', 'utf-8') as f:
         line_list = f.read().splitlines()
+
     post_list = []
     now_post = parse_metadata_old(line_list[0])
     for line in line_list[1:]:
@@ -173,6 +155,7 @@ def read_posts_old(filename):
         else:
             now_post['text'] += line + '\n'
     add_post_to_list_old(post_list, now_post)
+
     return post_list
 
 
@@ -180,10 +163,8 @@ def write_posts(filename, posts):
     dirname = os.path.dirname(filename)
     if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
-    check_lock(filename + '.writelock')
-    add_lock(filename + '.readlock')
-    add_lock(filename + '.writelock')
-    with codecs.open(filename, 'w', 'utf-8') as g:
+
+    with filewithlock.open(filename, 'w', 'utf-8') as g:
         for post in posts:
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
@@ -195,8 +176,6 @@ def write_posts(filename, posts):
                     comment['cid'],
                     datetime.fromtimestamp(int(comment['timestamp'])).strftime(
                         '%Y-%m-%d %H:%M:%S'), comment['text']))
-    release_lock(filename + '.readlock')
-    release_lock(filename + '.writelock')
 
 
 def get_comment(post):
@@ -239,6 +218,7 @@ def get_comment(post):
             'text': comment['text'] + '\n\n'
         })
     post['reply'] = len(post['comments'])
+
     return post
 
 
@@ -249,5 +229,5 @@ def clean_comment(post):
 
 def force_remove(filename):
     os.remove(filename)
-    release_lock(filename + '.readlock')
-    release_lock(filename + '.writelock')
+    filewithlock.release_lock(filename + '.readlock')
+    filewithlock.release_lock(filename + '.writelock')
