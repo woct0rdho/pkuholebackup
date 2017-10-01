@@ -2,6 +2,4 @@
 *.readlock
 *.writelock
 __pycache__
-log*
 pkuholebak.txt
-

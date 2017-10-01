@@ -340,7 +340,7 @@ The server encountered an unexpected condition which prevented it from fulfillin
 #p 36949 2015-09-21 16:07:05 1 0
 
 
-转天生歌姬A-Lin《声吶Sonar》世界巡演北京站门票 480*1 北台双号   33排10号 比较靠近舞台的方向。
+转天生歌姬A-Lin《声吶Sonar》世界巡演北京站门票 480*1 北台双号 33排10号 比较靠近舞台的方向。
 联系方式：bbsshowticket版内联系！必回。
 临时有事去不了了，在大麦上买的，可以看订单管理，当面现金或支付宝交易。
 
@@ -587,7 +587,7 @@ The server encountered an unexpected condition which prevented it from fulfillin
 [Alice] 不错
 
 #c 3365 2015-09-21 14:09:06
-[洞主] 给分好嘛…? 
+[洞主] 给分好嘛…?
 
 #c 3469 2015-09-21 22:24:41
 [Bob] Re #3365: 好

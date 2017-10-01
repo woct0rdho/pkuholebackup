@@ -1,5 +1,6 @@
 import codecs
 import os
+import time
 
 
 def check_lock(filename):

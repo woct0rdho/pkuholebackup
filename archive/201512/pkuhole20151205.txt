@@ -137,7 +137,7 @@
 [Bob] 打你脏手
 
 #c 27446 2015-12-05 23:47:40
-[Francis] 同大三，握手～  顺便，  129真是一点回忆都没留下，普通的学生被普通的折腾一阵子，帮助投入很多的那些人留下一段自我感动吧
+[Francis] 同大三，握手～ 顺便， 129真是一点回忆都没留下，普通的学生被普通的折腾一阵子，帮助投入很多的那些人留下一段自我感动吧
 
 #c 27459 2015-12-06 00:08:28
 [Grace] Re #27436: 满嘴一种不可一世的妄自尊大。觉得自己懂的特别多？看起来并不像是P大人
@@ -276,7 +276,7 @@ Maybe there are some bad ideas, but we are what we are!! We don't need other's i
 [Alice] 感到物院的善意😃
 
 #c 27403 2015-12-05 22:48:46
-[Bob] 物院好人😭 
+[Bob] 物院好人😭
 
 #c 27409 2015-12-05 22:53:32
 [Carol] 唔，毕竟是壕，仇恨值相对较高
@@ -416,7 +416,7 @@ Maybe there are some bad ideas, but we are what we are!! We don't need other's i
 [洞主] Re #27504: 两院合并了算了……大家各取所需hhhh意淫的
 
 #c 27518 2015-12-06 08:46:04
-[Carol] 谁让经院的关注点那么奇怪。  笑而不语
+[Carol] 谁让经院的关注点那么奇怪。 笑而不语
 
 #c 27635 2015-12-06 15:06:47
 [Grace] Re #27504: 某院不就是培养职业精英的地方？北大又不是每个院系的目的都是培养学术人才。酸得真低级。
@@ -437,7 +437,7 @@ Maybe there are some bad ideas, but we are what we are!! We don't need other's i
 [Alice] 换一个
 
 #c 27479 2015-12-06 00:38:29
-[Bob] ‍表白未必是好的选择 亲身经历后给出的建议 
+[Bob] ‍表白未必是好的选择 亲身经历后给出的建议
 
 #c 27602 2015-12-06 13:17:52
 [Carol] 同意Bob的看法
@@ -816,7 +816,7 @@ Maybe there are some bad ideas, but we are what we are!! We don't need other's i
 😁
 
 #p 43140 2015-12-05 13:45:41 1 1
-求问要怎么才能去图书馆阅览室里当助理？还有工资大概是多少    忙不忙？
+求问要怎么才能去图书馆阅览室里当助理？还有工资大概是多少 忙不忙？
 
 #c 27315 2015-12-05 18:09:53
 [Alice] 学期初注意关注bbs学生资助中心兼职版
@@ -865,7 +865,7 @@ Maybe there are some bad ideas, but we are what we are!! We don't need other's i
 [Francis] 我爸也提醒我了，免贵姓男
 
 #p 43135 2015-12-05 12:40:19 2 2
-amazing  store是不是不能用了？
+amazing store是不是不能用了？
 
 #c 27356 2015-12-05 20:07:57
 [Alice] 一看就是老人了，自从每次都下不下来后就好久没用了

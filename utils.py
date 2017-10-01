@@ -159,6 +159,10 @@ def read_posts_old(filename):
     return post_list
 
 
+def trim_lines(s):
+    return '\n'.join(map(lambda x: ' '.join(x.split()), s.splitlines())) + '\n'
+
+
 def write_posts(filename, posts):
     dirname = os.path.dirname(filename)
     if dirname and not os.path.exists(dirname):
@@ -169,13 +173,13 @@ def write_posts(filename, posts):
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
                 datetime.fromtimestamp(int(post['timestamp'])).strftime(
-                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
-                        'text']))
+                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'],
+                trim_lines(post['text'])))
             for comment in post['comments']:
                 g.write('#c {} {}\n{}'.format(
                     comment['cid'],
                     datetime.fromtimestamp(int(comment['timestamp'])).strftime(
-                        '%Y-%m-%d %H:%M:%S'), comment['text']))
+                        '%Y-%m-%d %H:%M:%S'), trim_lines(comment['text'])))
 
 
 def get_comment(post):
@@ -193,12 +197,12 @@ def get_comment(post):
         else:
             request_success = True
             break
-        time.sleep(2 + random.random())
+        time.sleep(5 + random.random())
         my_log('Post {} retry {}'.format(post['pid'], retry_count))
     if not request_success:
         raise Exception('Post {} request failed'.format(post['pid']))
 
-    time.sleep(0.5 + random.random() * 0.5)
+    time.sleep(0.5 + random.random())
     r.encoding = 'utf-8'
     try:
         data = r.json()
