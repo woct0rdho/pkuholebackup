@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# post和comment的text以\n\n结尾
+# text end with \n\n
 
 import codecs
 import filewithlock
@@ -20,9 +20,13 @@ logging.basicConfig(
 logging.getLogger('requests').setLevel(logging.WARNING)
 
 
+class CtrlCError(Exception):
+    pass
+
+
 def sigint_handler(signal, frame):
     logging.info('{} {}'.format(signal, frame))
-    raise Exception('Operation aborted')
+    raise CtrlCError
 
 
 signal.signal(signal.SIGINT, sigint_handler)
@@ -30,6 +34,10 @@ signal.signal(signal.SIGINT, sigint_handler)
 
 def my_log(s):
     logging.info(s)
+
+
+def trim_lines(s):
+    return '\n'.join(map(lambda x: ' '.join(x.split()), s.splitlines())) + '\n'
 
 
 def parse_metadata(line):
@@ -44,24 +52,6 @@ def parse_metadata(line):
         int(t[4]),
         'reply':
         int(t[5]),
-        'text':
-        '',
-        'comments': []
-    }
-
-
-def parse_metadata_old(line):
-    t = line.split()
-    return {
-        'pid':
-        int(t[0]),
-        'timestamp':
-        datetime.strptime('{} {}'.format(t[1], t[2]),
-                          '%Y-%m-%d %H:%M:%S').timestamp(),
-        'likenum':
-        int(t[3]),
-        'reply':
-        int(t[4]),
         'text':
         '',
         'comments': []
@@ -114,53 +104,63 @@ def read_posts(filename):
     return post_list
 
 
-def add_post_to_list_old(post_list, now_post):
-    if len(post_list) > 2 and now_post['pid'] == post_list[-2]['pid']:
-        # 检测顺序错误的树洞
-        my_log('Rec {}'.format(now_post['pid']))
-        post_list[-2] = now_post
-    elif len(post_list) > 0 and now_post['pid'] == post_list[-1]['pid']:
-        # 检测重复的树洞
-        my_log('Dup {}'.format(now_post['pid']))
-    elif len(post_list) > 0 and now_post['pid'] != post_list[-1]['pid'] - 1:
-        # 检测缺少的树洞
-        # 目前没有检测第一条树洞与上个文件的最后一条之间是否有缺少
-        my_log('Mis {} {}'.format(now_post['pid'], post_list[-1]['pid']))
-        for pid in range(post_list[-1]['pid'] - 1, now_post['pid'], -1):
+def read_posts_dict(filename):
+    with filewithlock.open(filename, 'r', 'utf-8') as f:
+        line_list = f.read().splitlines()
+
+    if not line_list:
+        return {}
+
+    post_dict = {}
+    now_post = parse_metadata(line_list[0])
+    now_comment = None
+    for line in line_list[1:]:
+        if line[:2] == '#p':
+            if now_comment:
+                now_post['comments'].append(now_comment)
+                now_comment = None
+            if not (post_dict.get(now_post['pid'])
+                    and '#MISSED' in now_post['text']):
+                post_dict[now_post['pid']] = now_post
+            now_post = parse_metadata(line)
+        elif line[:2] == '#c':
+            if now_comment:
+                now_post['comments'].append(now_comment)
+            now_comment = parse_comment_metadata(line)
+        else:
+            if now_comment:
+                now_comment['text'] += line + '\n'
+            else:
+                now_post['text'] += line + '\n'
+    if now_comment:
+        now_post['comments'].append(now_comment)
+    if not (post_dict.get(now_post['pid']) and '#MISSED' in now_post['text']):
+        post_dict[now_post['pid']] = now_post
+
+    return post_dict
+
+
+def post_dict_to_list(post_dict):
+    if not post_dict:
+        return []
+
+    post_list = []
+    last_time = 0
+    sort_keys = sorted(post_dict)
+    for pid in range(sort_keys[-1], sort_keys[0] - 1, -1):
+        if post_dict.get(pid):
+            post_list.append(post_dict[pid])
+            last_time = post_dict[pid]['timestamp']
+        else:
             post_list.append({
                 'pid': pid,
-                'timestamp': now_post['timestamp'],
-                'likenum': 0,
+                'timestamp': last_time,
+                'likenum': -1,
                 'reply': -1,
                 'text': '#MISSED\n\n',
                 'comments': []
             })
-        post_list.append(now_post)
-    else:
-        post_list.append(now_post)
-
-
-def read_posts_old(filename):
-    with codecs.open(filename, 'r', 'utf-8') as f:
-        line_list = f.read().splitlines()
-
-    post_list = []
-    now_post = parse_metadata_old(line_list[0])
-    for line in line_list[1:]:
-        if re.compile(
-                '[0-9]+ [0-9]+-[0-9]+-[0-9]+ [0-9]+:[0-9]+:[0-9]+ -?[0-9]+ -?[0-9]+'
-        ).fullmatch(line):
-            add_post_to_list_old(post_list, now_post)
-            now_post = parse_metadata_old(line)
-        else:
-            now_post['text'] += line + '\n'
-    add_post_to_list_old(post_list, now_post)
-
     return post_list
-
-
-def trim_lines(s):
-    return '\n'.join(map(lambda x: ' '.join(x.split()), s.splitlines())) + '\n'
 
 
 def write_posts(filename, posts):
@@ -173,18 +173,17 @@ def write_posts(filename, posts):
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
                 datetime.fromtimestamp(int(post['timestamp'])).strftime(
-                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'],
-                trim_lines(post['text'])))
+                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
+                        'text']))
             for comment in post['comments']:
                 g.write('#c {} {}\n{}'.format(
                     comment['cid'],
                     datetime.fromtimestamp(int(comment['timestamp'])).strftime(
-                        '%Y-%m-%d %H:%M:%S'), trim_lines(comment['text'])))
+                        '%Y-%m-%d %H:%M:%S'), comment['text']))
 
 
 def get_comment(post):
     request_success = False
-    # 尝试连接10次
     for retry_count in range(10):
         try:
             r = requests.get(
@@ -192,6 +191,8 @@ def get_comment(post):
                 format(post['pid']),
                 headers={'User-Agent': user_agent.generate_user_agent()},
                 timeout=5)
+        except CtrlCError:
+            break
         except Exception as e:
             pass
         else:
@@ -202,7 +203,7 @@ def get_comment(post):
     if not request_success:
         raise Exception('Post {} request failed'.format(post['pid']))
 
-    time.sleep(0.5 + random.random())
+    time.sleep(0.5 + random.random() * 0.5)
     r.encoding = 'utf-8'
     try:
         data = r.json()
@@ -219,7 +220,7 @@ def get_comment(post):
         post['comments'].append({
             'cid': int(comment['cid']),
             'timestamp': int(comment['timestamp']),
-            'text': comment['text'] + '\n\n'
+            'text': trim_lines(comment['text']) + '\n'
         })
     post['reply'] = len(post['comments'])
 

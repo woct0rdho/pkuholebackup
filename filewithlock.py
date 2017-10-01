@@ -32,6 +32,8 @@ class FileWithLock:
 
     def __enter__(self):
         if self.mode == 'r':
+            if not os.path.exists(self.filename):
+                codecs.open(self.filename, 'w', 'utf-8').close()
             check_lock(self.filename + '.readlock')
             add_lock(self.filename + '.writelock')
         elif self.mode == 'w':

