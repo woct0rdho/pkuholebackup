@@ -20,20 +20,21 @@ logging.basicConfig(
 logging.getLogger('requests').setLevel(logging.WARNING)
 
 
-class CtrlCError(Exception):
-    pass
+def my_log(s):
+    logging.info(s)
 
 
-def sigint_handler(signal, frame):
-    logging.info('{} {}'.format(signal, frame))
-    raise CtrlCError
+def sigint_disabled(signum, frame):
+    my_log('SIGINT disabled')
+
+
+def sigint_handler(signum, frame):
+    my_log('SIGINT received')
+    signal.signal(signal.SIGINT, sigint_disabled)
+    raise KeyboardInterrupt
 
 
 signal.signal(signal.SIGINT, sigint_handler)
-
-
-def my_log(s):
-    logging.info(s)
 
 
 def trim_lines(s):
@@ -191,10 +192,10 @@ def get_comment(post):
                 format(post['pid']),
                 headers={'User-Agent': user_agent.generate_user_agent()},
                 timeout=5)
-        except CtrlCError:
-            break
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt
         except Exception as e:
-            pass
+            my_log('{}'.format(e))
         else:
             request_success = True
             break
