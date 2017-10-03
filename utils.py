@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# text end with \n\n
+# post/comment['timestamp'] is int
+# post/comment['text'] ends with \n\n
 
 import codecs
 import filewithlock
@@ -47,8 +48,9 @@ def parse_metadata(line):
         'pid':
         int(t[1]),
         'timestamp':
-        datetime.strptime('{} {}'.format(t[2], t[3]),
-                          '%Y-%m-%d %H:%M:%S').timestamp(),
+        int(
+            datetime.strptime('{} {}'.format(t[2], t[3]), '%Y-%m-%d %H:%M:%S')
+            .timestamp()),
         'likenum':
         int(t[4]),
         'reply':
@@ -65,8 +67,9 @@ def parse_comment_metadata(line):
         'cid':
         int(t[1]),
         'timestamp':
-        datetime.strptime('{} {}'.format(t[2], t[3]),
-                          '%Y-%m-%d %H:%M:%S').timestamp(),
+        int(
+            datetime.strptime('{} {}'.format(t[2], t[3]), '%Y-%m-%d %H:%M:%S')
+            .timestamp()),
         'text':
         ''
     }
@@ -121,7 +124,7 @@ def read_posts_dict(filename):
                 now_post['comments'].append(now_comment)
                 now_comment = None
             if not (post_dict.get(now_post['pid'])
-                    and '#MISSED' in now_post['text']):
+                    and now_post['text'].splitlines()[0] == '#MISSED'):
                 post_dict[now_post['pid']] = now_post
             now_post = parse_metadata(line)
         elif line[:2] == '#c':
@@ -135,7 +138,8 @@ def read_posts_dict(filename):
                 now_post['text'] += line + '\n'
     if now_comment:
         now_post['comments'].append(now_comment)
-    if not (post_dict.get(now_post['pid']) and '#MISSED' in now_post['text']):
+    if not (post_dict.get(now_post['pid'])
+            and now_post['text'].splitlines()[0] == '#MISSED'):
         post_dict[now_post['pid']] = now_post
 
     return post_dict
@@ -173,13 +177,13 @@ def write_posts(filename, posts):
         for post in posts:
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
-                datetime.fromtimestamp(int(post['timestamp'])).strftime(
+                datetime.fromtimestamp(post['timestamp']).strftime(
                     '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
                         'text']))
             for comment in post['comments']:
                 g.write('#c {} {}\n{}'.format(
                     comment['cid'],
-                    datetime.fromtimestamp(int(comment['timestamp'])).strftime(
+                    datetime.fromtimestamp(comment['timestamp']).strftime(
                         '%Y-%m-%d %H:%M:%S'), comment['text']))
 
 
@@ -208,7 +212,6 @@ def get_comment(post):
     r.encoding = 'utf-8'
     try:
         data = r.json()
-        r.close()
     except Exception as e:
         my_log('Post {} parse json error: {}'.format(post['pid'], e))
         return post

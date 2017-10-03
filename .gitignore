@@ -1,6 +1,7 @@
+*.flag
+*.out
 *.pyc
 *.readlock
 *.writelock
 __pycache__
-log*
 pkuholebak.txt

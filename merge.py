@@ -10,13 +10,15 @@ output_folder = os.path.join(cdname, 'archive')
 
 # True: keep post1, False: keep post2
 def cmp(post1, post2):
-    if '#MISSED' in post2['text']:
+    first_line1 = post1['text'].splitlines()[0]
+    first_line2 = post2['text'].splitlines()[0]
+    if first_line2 == '#MISSED':
         return True
-    if '#MISSED' in post1['text']:
+    if first_line1 == '#MISSED':
         return False
-    if '#DELETED' in post1['text']:
+    if first_line1 == '#DELETED':
         return True
-    if '#DELETED' in post2['text']:
+    if first_line2 == '#DELETED':
         return False
     if post1['reply'] > post2['reply']:
         return True

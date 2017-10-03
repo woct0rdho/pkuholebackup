@@ -3,7 +3,7 @@ import os
 import time
 
 
-def check_lock(filename):
+def wait_lock(filename):
     while os.path.exists(filename):
         time.sleep(0.001)
 
@@ -34,10 +34,10 @@ class FileWithLock:
         if self.mode == 'r':
             if not os.path.exists(self.filename):
                 codecs.open(self.filename, 'w', 'utf-8').close()
-            check_lock(self.filename + '.readlock')
+            wait_lock(self.filename + '.readlock')
             add_lock(self.filename + '.writelock')
         elif self.mode == 'w':
-            check_lock(self.filename + '.writelock')
+            wait_lock(self.filename + '.writelock')
             add_lock(self.filename + '.readlock')
             add_lock(self.filename + '.writelock')
         else:

@@ -20,6 +20,13 @@ if __name__ == '__main__':
         my_log('No internet')
         exit()
 
+    if os.path.exists(os.path.join(cdname, 'update.flag')):
+        my_log('Update is already running')
+        exit()
+
+    with codecs.open(os.path.join(cdname, 'update.flag'), 'w', 'utf-8') as g:
+        g.write(str(os.getpid()))
+
     my_log('Begin read posts')
     post_dict = read_posts_dict(filename)
     my_log('End read posts')
@@ -34,7 +41,6 @@ if __name__ == '__main__':
     write_posts(filename_bak, post_dict_to_list(post_dict))
     my_log('End write bak')
 
-    finish = False
     page = 1
     try:
         while True:
@@ -71,7 +77,6 @@ if __name__ == '__main__':
             r.encoding = 'utf-8'
             try:
                 data = r.json()
-                r.close()
             except Exception as e:
                 raise e
 
@@ -79,6 +84,7 @@ if __name__ == '__main__':
                 # Finished
                 break
 
+            finish = False
             for post in data['data']:
                 pid = int(post['pid'])
                 if pid <= min_pid:
@@ -100,9 +106,31 @@ if __name__ == '__main__':
             page += 1
     except Exception as e:
         my_log('{}'.format(e))
+
+        my_log('Begin write posts at error')
         write_posts(filename, post_dict_to_list(post_dict))
+        my_log('End write posts at error')
+
+        os.remove(os.path.join(cdname, 'update.flag'))
         exit()
 
-    my_log('Begin write posts')
-    write_posts(filename, post_dict_to_list(post_dict))
-    my_log('End write posts')
+    if os.path.exists(os.path.join(cdname, 'split.flag')):
+        my_log('split.flag found')
+
+        with codecs.open(os.path.join(cdname, 'split.flag'), 'r',
+                         'utf-8') as f:
+            max_timestamp = int(f.read())
+
+        my_log('Begin write posts')
+        write_posts(filename,
+                    filter(lambda post: post['timestamp'] >= max_timestamp,
+                           post_dict_to_list(post_dict)))
+        my_log('End write posts')
+
+        os.remove(os.path.join(cdname, 'split.flag'))
+    else:
+        my_log('Begin write posts')
+        write_posts(filename, post_dict_to_list(post_dict))
+        my_log('End write posts')
+
+    os.remove(os.path.join(cdname, 'update.flag'))

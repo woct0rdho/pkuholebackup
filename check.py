@@ -21,9 +21,10 @@ def check_file(filename):
                 for i in range(last_pid + 1, pid):
                     print(i, time_str, 'N')
             last_pid = pid
-        if '#DELETED' in post['text']:
+        first_line = post['text'].splitlines()[0]
+        if first_line == '#DELETED':
             print(pid, time_str, 'D')
-        if '#MISSED' in post['text']:
+        if first_line == '#MISSED':
             print(pid, time_str, 'M')
         if post['reply'] >= 0 and post['reply'] != len(post['comments']):
             print(pid, time_str, 'R')
