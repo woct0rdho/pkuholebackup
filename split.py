@@ -12,10 +12,6 @@ day_count = 2
 if __name__ == '__main__':
     out_date = datetime.combine(date.today(),
                                 datetime.min.time()) - timedelta(day_count)
-    max_timestamp = int((out_date + timedelta(1)).timestamp())
-    print(max_timestamp)
-    exit()
-
     archive_filename = os.path.join(
         archive_folder,
         out_date.strftime('%Y%m'),
