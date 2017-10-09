@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # post/comment['timestamp'] is int
 # post/comment['text'] ends with \n\n
 
