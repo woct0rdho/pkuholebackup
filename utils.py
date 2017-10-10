@@ -200,8 +200,11 @@ def get_comment(post):
         except Exception as e:
             my_log('{}'.format(e))
         else:
-            request_success = True
-            break
+            if r.status_code == 200:
+                request_success = True
+                break
+            else:
+                my_log('Status {}'.format(r.status_code))
         time.sleep(5 + random.random())
         my_log('Post {} retry {}'.format(post['pid'], retry_count))
     if not request_success:
