@@ -4501,7 +4501,7 @@ star11
 [洞主] Re Alice: 可是我都发了两封邮件了……而且都显示已阅读，关键我都说了今天是提交开题表的截止日期，再忙你总不至于不回吧
 
 #c 1167256 2017-12-21 11:08:10
-[Carol] Re 洞主: �riority: optional
+[Carol] Re 洞主: Priority: optional
 Section: libs
 Installed-Size: 142
 Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
