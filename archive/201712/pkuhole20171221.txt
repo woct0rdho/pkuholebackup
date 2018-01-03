@@ -2438,8 +2438,8 @@ QAQ
 #p 312453 2017-12-21 17:59:25 0 0
 共赢共赢😏😏😏
 
-#p 312452 2017-12-21 17:59:25 -1 0
-#MISSED
+#p 312452 2017-12-21 17:59:09 1 0
+昨天一个小哥哥约文ai，男女均可的树洞是不是被删了🌚好奇一下
 
 #p 312451 2017-12-21 17:57:25 0 0
 复制这句话，打开支付宝领取大大大红包！还有惊喜红包等你拿！&PZEtCg66fm&
@@ -4501,40 +4501,41 @@ star11
 [洞主] Re Alice: 可是我都发了两封邮件了……而且都显示已阅读，关键我都说了今天是提交开题表的截止日期，再忙你总不至于不回吧
 
 #c 1167256 2017-12-21 11:08:10
-[Carol] Re 洞主: Priority: optional
-Section: libs
-Installed-Size: 142
-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
-Architecture: armhf
-Multi-Arch: same
-Source: gcc-6
-Version: 6.3.0-18
-Provides: libgomp1-armhf
-Depends: gcc-6-base (= 6.3.0-18), libc6 (>= 2.17)
-Breaks: gcc-4.3 (<< 4.3.6-1), gcc-4.4 (<< 4.4.6-4), gcc-4.5 (<< 4.5.3-2)
-Description: GCC OpenMP (GOMP) support library
- GOMP is an implementation of OpenMP for the C, C++, and Fortran compilers
- in the GNU Compiler Collection.
-Homepage: http://gcc.gnu.org/
+[Carol] Re 洞主: 不回很正常。。有的老师就是忙的没时间，建议去办公室面谈
 
-Package: python3.5
-Status: install ok installed
-Priority: optional
-Section: python
-Installed-Size: 319
-Maintainer: Matthias Klose <doko@debian.org>
-Architecture: armhf
-Multi-Arch: allowed
-Version: 3.5.3-1
-Depends: python3.5-minimal (= 3.5.3-1), libpython3.5-stdlib (= 3.5.3-1), mime-support
-Suggests: python3.5-venv, python3.5-doc, binutils
-Description: Interactive high-level object-oriented language (version 3.5)
- Python is a high-level, interactive, object-oriented language. Its 3.5 version
- includes an extensive class library with lots of goodies for
- network programming, system administration, sounds and graphics.
+#c 1167261 2017-12-21 11:11:37
+[洞主] Re Carol: 可人家是做社科的，又不需要蹲实验室，去过几次都不在
 
-Package: libatomic1
-S#p 312278 2017-12-21 10:42:36 1 3
+#c 1167264 2017-12-21 11:14:19
+[Carol] Re 洞主: emmm他不用上课么？去蹲他的课吧hhhhh
+
+#p 312280 2017-12-21 10:44:34 1 4
+求问昨天考文计上机的同学，都怎么个考法啊😶dz今天有些慌
+
+#c 1167248 2017-12-21 11:02:35
+[Alice] 就是不让你拿高分的考法
+
+#c 1167267 2017-12-21 11:20:14
+[Bob] 凉凉的
+
+#c 1167277 2017-12-21 11:27:51
+[Carol] 死亡如风
+
+#c 1167288 2017-12-21 11:40:54
+[Dave] 就是让你无法交卷而已啊
+
+#p 312279 2017-12-21 10:43:21 2 2
+校医院倚老卖老插队的大爷大妈们真是社会哦，为什么拉不下脸来跟他们说呢。。
+期末季时间全耽误在这了还毁情绪
+手动微笑
+
+#c 1167241 2017-12-21 10:48:23
+[Alice] 这话我原封不动和室友说过，简直无语，好像年轻人不让他们插队就是我们没素质一样。
+
+#c 1167247 2017-12-21 11:00:50
+[洞主] Re Alice: 就是。。等叫号等了10分钟，结果又在门口被插队等了20分钟
+
+#p 312278 2017-12-21 10:42:36 1 3
 出佳能60d……3500 镜头18-155 配无线遥控器，高档相机包，Kingston32G储存卡，保护uv镜已装（可拆）
 
 ……可小刀
