@@ -3,26 +3,35 @@
 from utils import *
 
 cdname = os.path.dirname(__file__)
+# 1: old, 2: new
 input_folder1 = os.path.join(cdname, 'archive')
-input_folder2 = os.path.join(cdname, 'archive2')
+input_folder2 = os.path.join(cdname, 'archivenew')
 output_folder = os.path.join(cdname, 'archive')
 
 
 # True: keep post1, False: keep post2
 def cmp(post1, post2):
-    first_line1 = post1['text'].splitlines()[0]
-    first_line2 = post2['text'].splitlines()[0]
+    try:
+        first_line1 = post1['text'].splitlines()[0]
+    except:
+        first_line1 = ''
+    try:
+        first_line2 = post2['text'].splitlines()[0]
+    except:
+        first_line2 = ''
+
     if first_line2 == '#MISSED':
         return True
-    if first_line1 == '#MISSED':
+    elif first_line1 == '#MISSED':
         return False
-    if first_line1 == '#DELETED':
+    elif first_line1 == '#DELETED':
         return True
-    if first_line2 == '#DELETED':
+    elif first_line2 == '#DELETED':
         return False
-    if post1['reply'] > post2['reply']:
+    elif post1['reply'] > post2['reply']:
         return True
-    return False
+    else:
+        return False
 
 
 def merge_file(filename):

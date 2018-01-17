@@ -95,7 +95,7 @@ if __name__ == '__main__':
                     'pid': pid,
                     'timestamp': int(post['timestamp']),
                     'likenum': int(post['likenum']),
-                    'reply': -1,
+                    'reply': int(post['reply']),
                     'text': trim_lines(post['text']) + '\n',
                     'comments': []
                 }

@@ -7,14 +7,13 @@ filename = os.path.join(cdname, 'pkuhole.txt')
 archive_folder = os.path.join(cdname, 'archive')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'
+
 day_count = 2
 
 if __name__ == '__main__':
-    out_date = datetime.combine(date.today(),
-                                datetime.min.time()) - timedelta(day_count)
+    out_date = date.today() - timedelta(day_count)
     archive_filename = os.path.join(
-        archive_folder,
-        out_date.strftime('%Y%m'),
+        archive_folder, out_date.strftime('%Y%m'),
         archive_basename + out_date.strftime('%Y%m%d') + archive_extname)
     if os.path.exists(archive_filename):
         my_log('Archive file exists')
@@ -22,7 +21,9 @@ if __name__ == '__main__':
 
     my_log('Archive {}'.format(archive_filename))
     try:
-        max_timestamp = int((out_date + timedelta(1)).timestamp())
+        max_timestamp = int(
+            datetime.combine(out_date + timedelta(1),
+                             datetime.min.time()).timestamp())
         write_posts(archive_filename,
                     map(get_comment,
                         filter(lambda post: post['timestamp'] < max_timestamp,

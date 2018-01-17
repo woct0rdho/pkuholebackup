@@ -75,8 +75,12 @@ def parse_comment_metadata(line):
 
 
 def read_posts(filename):
-    with filewithlock.open(filename, 'r', 'utf-8') as f:
-        line_list = f.read().splitlines()
+    line_list = None
+    try:
+        with filewithlock.open(filename, 'r', 'utf-8') as f:
+            line_list = f.read().splitlines()
+    except Exception as e:
+        my_log('File {} read error: {}'.format(filename, e))
 
     if not line_list:
         return []
@@ -108,8 +112,12 @@ def read_posts(filename):
 
 
 def read_posts_dict(filename):
-    with filewithlock.open(filename, 'r', 'utf-8') as f:
-        line_list = f.read().splitlines()
+    line_list = None
+    try:
+        with filewithlock.open(filename, 'r', 'utf-8') as f:
+            line_list = f.read().splitlines()
+    except Exception as e:
+        my_log('File {} read error: {}'.format(filename, e))
 
     if not line_list:
         return {}
@@ -176,14 +184,15 @@ def write_posts(filename, posts):
         for post in posts:
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
-                datetime.fromtimestamp(post['timestamp']).strftime(
-                    '%Y-%m-%d %H:%M:%S'), post['likenum'], post['reply'], post[
-                        'text']))
+                datetime.fromtimestamp(
+                    post['timestamp']).strftime('%Y-%m-%d %H:%M:%S'),
+                post['likenum'], post['reply'], post['text']))
             for comment in post['comments']:
                 g.write('#c {} {}\n{}'.format(
                     comment['cid'],
-                    datetime.fromtimestamp(comment['timestamp']).strftime(
-                        '%Y-%m-%d %H:%M:%S'), comment['text']))
+                    datetime.fromtimestamp(
+                        comment['timestamp']).strftime('%Y-%m-%d %H:%M:%S'),
+                    comment['text']))
 
 
 def get_comment(post):
@@ -222,6 +231,7 @@ def get_comment(post):
         my_log('Post {} get comment error: {}'.format(post['pid'], data))
         return post
 
+    post['comments'] = []
     for comment in data['data']:
         post['comments'].append({
             'cid': int(comment['cid']),

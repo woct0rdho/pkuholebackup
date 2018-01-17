@@ -6,6 +6,7 @@ cdname = os.path.dirname(__file__)
 filename = os.path.join(cdname, 'pkuhole.txt')
 
 max_missed_pid = 100
+default_reply = -1
 
 
 def check_file(filename):
@@ -16,19 +17,22 @@ def check_file(filename):
     last_pid = None
     for post in post_list:
         pid = post['pid']
-        time_str = datetime.fromtimestamp(int(
-            post['timestamp'])).strftime('%Y-%m-%d %H:%M:%S')
+        time_str = datetime.fromtimestamp(
+            post['timestamp']).strftime('%Y-%m-%d %H:%M:%S')
         if last_pid and pid > last_pid + 1 and pid < last_pid + max_missed_pid:
             for i in range(last_pid + 1, pid):
-                print(i, time_str, 'N')
+                my_log('{} {} REALLY MISSED'.format(i, time_str))
         last_pid = pid
         first_line = post['text'].splitlines()[0]
         if first_line == '#DELETED':
-            print(pid, time_str, 'D')
+            my_log('{} {} DELETED'.format(pid, time_str))
         if first_line == '#MISSED':
-            print(pid, time_str, 'M')
-        if post['reply'] >= 0 and post['reply'] != len(post['comments']):
-            print(pid, time_str, 'R')
+            my_log('{} {} MISSED'.format(pid, time_str))
+        if default_reply is not False and (
+                post['reply'] != default_reply
+                and post['reply'] != len(post['comments'])):
+            my_log('{} {} REPLY NOT MATCH {} {}'.format(
+                pid, time_str, post['reply'], len(post['comments'])))
 
     oldest_pid = post_list[0]['pid']
     newest_pid = post_list[-1]['pid']
@@ -36,4 +40,5 @@ def check_file(filename):
 
 
 if __name__ == '__main__':
+    default_reply = False
     check_file(filename)
