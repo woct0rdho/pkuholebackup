@@ -4,7 +4,7 @@ from check import *
 from utils import *
 
 cdname = os.path.dirname(__file__)
-archive_folder = os.path.join(cdname, 'archive', '201801')
+archive_folder = os.path.join(cdname, 'archive', '201802')
 
 if __name__ == '__main__':
     last_pid = None
