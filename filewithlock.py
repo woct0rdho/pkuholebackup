@@ -21,7 +21,7 @@ def release_lock(filename):
         os.remove(filename)
 
 
-class FileWithLock:
+class FileWithLock(object):
     def __init__(self, filename, mode, encoding, errors, buffering):
         self.filename = filename
         self.mode = mode
@@ -41,7 +41,7 @@ class FileWithLock:
             add_lock(self.filename + '.readlock')
             add_lock(self.filename + '.writelock')
         else:
-            raise ValueError('invalid mode: \'{}\''.format(mode))
+            raise ValueError('invalid mode: \'{}\''.format(self.mode))
         self.file = codecs.open(self.filename, self.mode, self.encoding,
                                 self.errors, self.buffering)
         return self.file
@@ -53,7 +53,7 @@ class FileWithLock:
             release_lock(self.filename + '.readlock')
             release_lock(self.filename + '.writelock')
         else:
-            raise ValueError('invalid mode: \'{}\''.format(mode))
+            raise ValueError('invalid mode: \'{}\''.format(self.mode))
         self.file.close()
 
 

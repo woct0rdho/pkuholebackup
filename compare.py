@@ -6,9 +6,9 @@ from utils import *
 
 cdname = os.path.dirname(__file__)
 # 1: old, 2: new
-input_folder1 = os.path.join(cdname, 'archive')
-input_folder2 = os.path.join(cdname, 'archivebak')
-output_folder = os.path.join(cdname, 'archive')
+input_dir1 = os.path.join(cdname, 'archive')
+input_dir2 = os.path.join(cdname, 'archivebak')
+output_dir = os.path.join(cdname, 'archive')
 
 default_reply = -1
 dry_run = False
@@ -46,7 +46,7 @@ def compare_reply(post1, post2, out_list, pid, time_str):
 
 
 def compare_file(filename):
-    post_list1 = read_posts(filename.replace(input_folder2, input_folder1))
+    post_list1 = read_posts(filename.replace(input_dir2, input_dir1))
     post_list2 = read_posts(filename)
     out_list = []
 
@@ -177,7 +177,7 @@ def compare_file(filename):
 
         j += 1
 
-    write_posts(filename.replace(input_folder2, output_folder), out_list)
+    write_posts(filename.replace(input_dir2, output_dir), out_list)
 
 
 if __name__ == '__main__':
@@ -186,7 +186,7 @@ if __name__ == '__main__':
         handlers=[logging.FileHandler('compare_out.txt', 'w', 'utf-8')],
         level=logging.INFO,
         format='%(asctime)s %(message)s')
-    for root, dirs, files in os.walk(input_folder2):
+    for root, dirs, files in os.walk(input_dir2):
         for file in sorted(files):
             filename = os.path.join(root, file)
             print(filename)

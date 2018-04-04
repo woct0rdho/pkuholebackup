@@ -31,17 +31,18 @@ if __name__ == '__main__':
     post_dict = read_posts_dict(filename)
     my_log('End read posts')
 
-    if post_dict:
-        min_pid = sorted(post_dict)[-1]
-    else:
-        min_pid = 32860  # May change
-    my_log('Min pid: {}'.format(min_pid))
-
     my_log('Begin write bak')
     write_posts(filename_bak, post_dict_to_list(post_dict))
     my_log('End write bak')
 
     page = 1
+
+    if page == 1 and post_dict:
+        min_pid = sorted(post_dict)[-1]
+    else:
+        min_pid = 11320  # May change
+    my_log('Min pid: {}'.format(min_pid))
+
     try:
         while True:
             my_log('Page {}'.format(page))

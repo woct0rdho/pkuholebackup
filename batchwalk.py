@@ -3,10 +3,10 @@
 from utils import *
 
 cdname = os.path.dirname(__file__)
-archive_folder = os.path.join(cdname, 'archivetest')
+archive_dir = os.path.join(cdname, 'archivetest')
 
 if __name__ == '__main__':
-    for root, dirs, files in os.walk(archive_folder):
+    for root, dirs, files in os.walk(archive_dir):
         for file in sorted(files):
             filename = os.path.join(root, file)
             my_log(filename)

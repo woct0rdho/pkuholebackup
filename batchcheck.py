@@ -4,11 +4,11 @@ from check import *
 from utils import *
 
 cdname = os.path.dirname(__file__)
-archive_folder = os.path.join(cdname, 'archive', '201802')
+archive_dir = os.path.join(cdname, 'archive', '201804')
 
 if __name__ == '__main__':
     last_pid = None
-    for root, dirs, files in os.walk(archive_folder):
+    for root, dirs, files in os.walk(archive_dir):
         for file in sorted(files):
             filename = os.path.join(root, file)
             oldest_pid, newest_pid = check_file(filename)

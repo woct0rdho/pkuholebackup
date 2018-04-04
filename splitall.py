@@ -4,7 +4,7 @@ from utils import *
 
 cdname = os.path.dirname(__file__)
 filename = os.path.join(cdname, '../dlpkuhole2bak/pkuhole_20180117.txt')
-archive_folder = os.path.join(cdname, 'archivebak')
+archive_dir = os.path.join(cdname, 'archivebak')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'
 
@@ -16,7 +16,7 @@ if __name__ == '__main__':
         now_date = date.fromtimestamp(post['timestamp'])
         if now_date < last_date:
             archive_filename = os.path.join(
-                archive_folder, last_date.strftime('%Y%m'), archive_basename +
+                archive_dir, last_date.strftime('%Y%m'), archive_basename +
                 last_date.strftime('%Y%m%d') + archive_extname)
             write_posts(archive_filename, post_dict_to_list(now_post_dict))
             last_date = now_date
@@ -24,6 +24,6 @@ if __name__ == '__main__':
             my_log(last_date.strftime('%Y%m%d'))
         now_post_dict[post['pid']] = post
     archive_filename = os.path.join(
-        archive_folder, last_date.strftime('%Y%m'),
+        archive_dir, last_date.strftime('%Y%m'),
         archive_basename + last_date.strftime('%Y%m%d') + archive_extname)
     write_posts(archive_filename, post_dict_to_list(now_post_dict))

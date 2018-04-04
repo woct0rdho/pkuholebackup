@@ -4,7 +4,7 @@ from utils import *
 
 cdname = os.path.dirname(__file__)
 filename = os.path.join(cdname, 'pkuhole.txt')
-archive_folder = os.path.join(cdname, 'archive')
+archive_dir = os.path.join(cdname, 'archive')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'
 
@@ -13,7 +13,7 @@ day_count = 2
 if __name__ == '__main__':
     out_date = date.today() - timedelta(day_count)
     archive_filename = os.path.join(
-        archive_folder, out_date.strftime('%Y%m'),
+        archive_dir, out_date.strftime('%Y%m'),
         archive_basename + out_date.strftime('%Y%m%d') + archive_extname)
     if os.path.exists(archive_filename):
         my_log('Archive file exists')
