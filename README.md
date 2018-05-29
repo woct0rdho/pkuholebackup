@@ -11,4 +11,4 @@ P大树洞备份 https://github.com/martinwu42/dlpkuhole2
 
 由于 commit 数量很多，clone 时请加上`--depth 1`
 
-由于我懒得写，commit message 使用 [whatthecommit](https://github.com/ngerakines/commitment) 随机生成
+由于我懒得写，commit message 全是随机的字符串
