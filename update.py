@@ -40,7 +40,7 @@ if __name__ == '__main__':
     if page == 1 and post_dict:
         min_pid = sorted(post_dict)[-1]
     else:
-        min_pid = 11320  # May change
+        min_pid = 32859  # May change
     my_log('Min pid: {}'.format(min_pid))
 
     try:

@@ -3,7 +3,7 @@
 from utils import *
 
 cdname = os.path.dirname(__file__)
-filename = os.path.join(cdname, '../dlpkuhole2bak/pkuhole_20180117.txt')
+filename = os.path.join(cdname, 'pkuhole.txt')
 archive_dir = os.path.join(cdname, 'archivebak')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'

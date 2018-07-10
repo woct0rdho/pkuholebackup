@@ -3,7 +3,7 @@
 from utils import *
 
 cdname = os.path.dirname(__file__)
-archive_dir = os.path.join(cdname, 'archivetest')
+archive_dir = os.path.join(cdname, 'archivebak')
 
 if __name__ == '__main__':
     for root, dirs, files in os.walk(archive_dir):

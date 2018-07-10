@@ -488,7 +488,7 @@ The server encountered an unexpected condition which prevented it from fulfillin
 #c 3391 2015-09-21 15:45:06
 [洞主] Re #3384: 破涕为笑
 
-#p 36937 2015-09-21 14:26:19 2 3
+#p 36937 2015-09-21 14:26:19 2 4
 谁能和我解释下范后宏说的代数基本定理的未名湖证明
 
 #c 3390 2015-09-21 15:42:26
@@ -499,6 +499,9 @@ The server encountered an unexpected condition which prevented it from fulfillin
 
 #c 3452 2015-09-21 20:56:34
 [Carol] Re #3403:
+
+#c 1434761 2018-04-24 14:53:52
+[Dave] Re Bob:
 
 #p 36936 2015-09-21 14:13:07 3 7
 同志们，我感觉大学学的东西对我来说没什么意义，想出去却付不起代价，想从事导演、演员方面工作，心情好乱，该怎么办？求疏导^_^
