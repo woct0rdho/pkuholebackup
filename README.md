@@ -1,5 +1,5 @@
 # dlpkuhole2
-P大树洞备份 https://github.com/martinwu42/dlpkuhole2
+P大树洞备份第二代 https://github.com/martinwu42/dlpkuhole2
 
 [点击查看最新树洞](https://github.com/martinwu42/dlpkuhole2/blob/master/pkuhole.txt)
 
@@ -7,8 +7,17 @@ P大树洞备份 https://github.com/martinwu42/dlpkuhole2
 
 请合理使用 GitHub 的搜索功能，目前可以搜索树洞号和英文关键词，但是对中文关键词的支持不是很好，我正在想办法
 
+为了避免安全问题，目前不支持备份图片、音频
+
 由于备份评论的工作量过大，两天以上的树洞才能备份评论
 
 由于 commit 数量很多，clone 时请加上`--depth 1`
 
 由于我懒得写，commit message 全是随机的字符串
+
+# 友情链接
+https://github.com/huisedenanhai/pkuhole
+
+https://github.com/YibaiMeng/pkuHole
+
+https://github.com/xmcp/AsHole
