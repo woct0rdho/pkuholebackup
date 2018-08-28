@@ -13,6 +13,8 @@ P大树洞备份第二代 https://github.com/martinwu42/dlpkuhole2
 
 由于我懒得写，commit message 全是随机的字符串
 
+如果你 fork 了，记得及时更新
+
 # 友情链接
 https://github.com/huisedenanhai/pkuhole
 
