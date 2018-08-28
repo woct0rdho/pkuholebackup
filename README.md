@@ -1,9 +1,7 @@
 # dlpkuhole2
 P大树洞备份第二代 https://github.com/martinwu42/dlpkuhole2
 
-[点击查看最新树洞](https://github.com/martinwu42/dlpkuhole2/blob/master/pkuhole.txt)
-
-[点击查看历史树洞](https://github.com/martinwu42/dlpkuhole2/tree/master/archive)
+[点击查看最新树洞](https://github.com/martinwu42/dlpkuhole2/blob/master/pkuhole.txt) [点击查看历史树洞](https://github.com/martinwu42/dlpkuhole2/tree/master/archive)
 
 请合理使用 GitHub 的搜索功能，目前可以搜索树洞号和英文关键词，但是对中文关键词的支持不是很好，我正在想办法
 
