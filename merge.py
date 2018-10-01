@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-from utils import *
+import os
+
+from utils import my_log, read_posts, write_posts
 
 cdname = os.path.dirname(__file__)
 # 1: old, 2: new
@@ -11,13 +13,13 @@ output_dir = os.path.join(cdname, 'archive')
 
 # True: keep post1, False: keep post2
 def cmp(post1, post2):
-    try:
+    if post1['text']:
         first_line1 = post1['text'].splitlines()[0]
-    except:
+    else:
         first_line1 = ''
-    try:
+    if post2['text']:
         first_line2 = post2['text'].splitlines()[0]
-    except:
+    else:
         first_line2 = ''
 
     if first_line2 == '#MISSED':
@@ -54,12 +56,8 @@ def merge_file(filename):
                 out_list.append(post_list2[j])
             i += 1
             j += 1
-    while i < len(post_list1):
-        out_list.append(post_list1[i])
-        i += 1
-    while j < len(post_list2):
-        out_list.append(post_list2[j])
-        j += 1
+    out_list += post_list1[i:]
+    out_list += post_list2[j:]
     write_posts(filename.replace(input_dir2, output_dir), out_list)
 
 

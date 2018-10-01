@@ -1,6 +1,20 @@
 #!/usr/bin/python3
 
-from utils import *
+import os
+import random
+import time
+
+import requests
+import user_agent
+
+from utils import (
+    get_list_api,
+    my_log,
+    post_dict_to_list,
+    read_posts_dict,
+    trim_lines,
+    write_posts,
+)
 
 cdname = os.path.dirname(__file__)
 filename = os.path.join(cdname, 'pkuhole.txt')
@@ -10,7 +24,7 @@ filename_bak = os.path.join(cdname, 'pkuholebak.txt')
 def internet_on():
     try:
         requests.get('https://www.baidu.com', timeout=5)
-    except:
+    except ConnectionError:
         return False
     return True
 
@@ -24,7 +38,7 @@ if __name__ == '__main__':
         my_log('Update is already running')
         exit()
 
-    with codecs.open(os.path.join(cdname, 'update.flag'), 'w', 'utf-8') as g:
+    with open(os.path.join(cdname, 'update.flag'), 'w', encoding='utf-8') as g:
         g.write(str(os.getpid()))
 
     my_log('Begin read posts')
@@ -56,8 +70,7 @@ if __name__ == '__main__':
             for retry_count in range(10):
                 try:
                     r = requests.get(
-                        'http://www.pkuhelper.com/services/pkuhole/api.php?action=getlist&p={}'.
-                        format(page),
+                        get_list_api.format(page),
                         headers={
                             'User-Agent': user_agent.generate_user_agent()
                         },
@@ -67,8 +80,11 @@ if __name__ == '__main__':
                 except Exception as e:
                     my_log('{}'.format(e))
                 else:
-                    request_success = True
-                    break
+                    if r.status_code == 200:
+                        request_success = True
+                        break
+                    else:
+                        my_log('Status {}'.format(r.status_code))
                 time.sleep(5 + random.random())
                 my_log('Page {} retry {}'.format(page, retry_count))
             if not request_success:
@@ -118,14 +134,16 @@ if __name__ == '__main__':
     if os.path.exists(os.path.join(cdname, 'split.flag')):
         my_log('split.flag found')
 
-        with codecs.open(os.path.join(cdname, 'split.flag'), 'r',
-                         'utf-8') as f:
+        with open(
+                os.path.join(cdname, 'split.flag'), 'r',
+                encoding='utf-8') as f:
             max_timestamp = int(f.read())
 
         my_log('Begin write posts')
-        write_posts(filename,
-                    filter(lambda post: post['timestamp'] >= max_timestamp,
-                           post_dict_to_list(post_dict)))
+        write_posts(
+            filename,
+            filter(lambda post: post['timestamp'] >= max_timestamp,
+                   post_dict_to_list(post_dict)))
         my_log('End write posts')
 
         os.remove(os.path.join(cdname, 'split.flag'))

@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-from utils import *
+import os
+from datetime import date
+
+from utils import my_log, post_dict_to_list, read_posts, write_posts
 
 cdname = os.path.dirname(__file__)
 filename = os.path.join(cdname, 'pkuhole.txt')

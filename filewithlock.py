@@ -1,11 +1,13 @@
-import codecs
+import builtins
 import os
 import time
+
+wait_lock_time = 0.001
 
 
 def wait_lock(filename):
     while os.path.exists(filename):
-        time.sleep(0.001)
+        time.sleep(wait_lock_time)
 
 
 def add_lock(filename):
@@ -13,7 +15,7 @@ def add_lock(filename):
     if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
     if not os.path.exists(filename):
-        codecs.open(filename, 'w', 'utf-8').close()
+        builtins.open(filename, 'w').close()
 
 
 def release_lock(filename):
@@ -22,18 +24,16 @@ def release_lock(filename):
 
 
 class FileWithLock(object):
-    def __init__(self, filename, mode, encoding, errors, buffering):
+    def __init__(self, filename, mode='r', **kwargs):
         self.filename = filename
         self.mode = mode
-        self.encoding = encoding
-        self.errors = errors
-        self.buffering = buffering
+        self.kwargs = kwargs
         self.file = None
 
     def __enter__(self):
         if self.mode == 'r':
             if not os.path.exists(self.filename):
-                codecs.open(self.filename, 'w', 'utf-8').close()
+                builtins.open(self.filename, 'w').close()
             wait_lock(self.filename + '.readlock')
             add_lock(self.filename + '.writelock')
         elif self.mode == 'w':
@@ -42,8 +42,7 @@ class FileWithLock(object):
             add_lock(self.filename + '.writelock')
         else:
             raise ValueError('invalid mode: \'{}\''.format(self.mode))
-        self.file = codecs.open(self.filename, self.mode, self.encoding,
-                                self.errors, self.buffering)
+        self.file = builtins.open(self.filename, self.mode, **self.kwargs)
         return self.file
 
     def __exit__(self, exc_type, exc_value, traceback):
@@ -57,5 +56,5 @@ class FileWithLock(object):
         self.file.close()
 
 
-def open(filename, mode='r', encoding='utf-8', errors='strict', buffering=1):
-    return FileWithLock(filename, mode, encoding, errors, buffering)
+def open(filename, mode='r', **kwargs):
+    return FileWithLock(filename, mode, **kwargs)

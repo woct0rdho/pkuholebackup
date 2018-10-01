@@ -2,7 +2,11 @@
 #
 # DELETED posts must have latest comments
 
-from utils import *
+import logging
+import os
+from datetime import datetime
+
+from utils import my_log, read_posts
 
 cdname = os.path.dirname(__file__)
 # 1: old, 2: new
@@ -12,6 +16,12 @@ output_dir = os.path.join(cdname, 'archive')
 
 default_reply = -1
 dry_run = False
+
+logging.getLogger().handlers = []
+logging.basicConfig(
+    handlers=[logging.FileHandler('compare_out.txt', 'w', 'utf-8')],
+    level=logging.INFO,
+    format='%(asctime)s %(message)s')
 
 
 def get_comment_fake(post):
@@ -55,13 +65,13 @@ def compare_file(filename):
     while i < len(post_list1) and j < len(post_list2):
         post1 = post_list1[i]
         post2 = post_list2[j]
-        try:
+        if post1['text']:
             first_line1 = post1['text'].splitlines()[0]
-        except:
+        else:
             first_line1 = ''
-        try:
+        if post2['text']:
             first_line2 = post2['text'].splitlines()[0]
-        except:
+        else:
             first_line2 = ''
 
         if post1['pid'] > post2['pid']:
@@ -135,9 +145,9 @@ def compare_file(filename):
 
     while i < len(post_list1):
         post1 = post_list1[i]
-        try:
+        if post1['text']:
             first_line1 = post1['text'].splitlines()[0]
-        except:
+        else:
             first_line1 = ''
 
         pid = post1['pid']
@@ -158,9 +168,9 @@ def compare_file(filename):
 
     while j < len(post_list2):
         post2 = post_list2[j]
-        try:
+        if post2['text']:
             first_line2 = post2['text'].splitlines()[0]
-        except:
+        else:
             first_line2 = ''
 
         pid = post2['pid']
@@ -181,13 +191,8 @@ def compare_file(filename):
 
 
 if __name__ == '__main__':
-    logging.getLogger().handlers = []
-    logging.basicConfig(
-        handlers=[logging.FileHandler('compare_out.txt', 'w', 'utf-8')],
-        level=logging.INFO,
-        format='%(asctime)s %(message)s')
     for root, dirs, files in os.walk(input_dir2):
         for file in sorted(files):
             filename = os.path.join(root, file)
-            print(filename)
+            my_log(filename)
             compare_file(filename)

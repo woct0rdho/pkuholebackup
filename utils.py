@@ -1,18 +1,21 @@
 # post/comment['timestamp'] is int
 # post/comment['text'] ends with \n\n
 
-import codecs
-import filewithlock
 import logging
 import os
 import random
-import re
-import requests
 import signal
 import sys
 import time
+from datetime import datetime
+
+import requests
 import user_agent
-from datetime import date, datetime, timedelta
+
+import filewithlock
+
+get_list_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getlist&p={}'
+get_comment_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getcomment&pid={}'
 
 logging.getLogger().handlers = []
 logging.basicConfig(
@@ -48,8 +51,8 @@ def parse_metadata(line):
         int(t[1]),
         'timestamp':
         int(
-            datetime.strptime('{} {}'.format(t[2], t[3]), '%Y-%m-%d %H:%M:%S')
-            .timestamp()),
+            datetime.strptime('{} {}'.format(t[2], t[3]),
+                              '%Y-%m-%d %H:%M:%S').timestamp()),
         'likenum':
         int(t[4]),
         'reply':
@@ -67,8 +70,8 @@ def parse_comment_metadata(line):
         int(t[1]),
         'timestamp':
         int(
-            datetime.strptime('{} {}'.format(t[2], t[3]), '%Y-%m-%d %H:%M:%S')
-            .timestamp()),
+            datetime.strptime('{} {}'.format(t[2], t[3]),
+                              '%Y-%m-%d %H:%M:%S').timestamp()),
         'text':
         ''
     }
@@ -77,7 +80,7 @@ def parse_comment_metadata(line):
 def read_posts(filename):
     line_list = None
     try:
-        with filewithlock.open(filename, 'r', 'utf-8') as f:
+        with filewithlock.open(filename, 'r', encoding='utf-8') as f:
             line_list = f.read().splitlines()
     except Exception as e:
         my_log('File {} read error: {}'.format(filename, e))
@@ -114,7 +117,7 @@ def read_posts(filename):
 def read_posts_dict(filename):
     line_list = None
     try:
-        with filewithlock.open(filename, 'r', 'utf-8') as f:
+        with filewithlock.open(filename, 'r', encoding='utf-8') as f:
             line_list = f.read().splitlines()
     except Exception as e:
         my_log('File {} read error: {}'.format(filename, e))
@@ -180,7 +183,7 @@ def write_posts(filename, posts):
     if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
 
-    with filewithlock.open(filename, 'w', 'utf-8') as g:
+    with filewithlock.open(filename, 'w', encoding='utf-8', newline='\n') as g:
         for post in posts:
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
@@ -200,8 +203,7 @@ def get_comment(post):
     for retry_count in range(10):
         try:
             r = requests.get(
-                'http://www.pkuhelper.com/services/pkuhole/api.php?action=getcomment&pid={}'.
-                format(post['pid']),
+                get_comment_api.format(post['pid']),
                 headers={'User-Agent': user_agent.generate_user_agent()},
                 timeout=5)
         except KeyboardInterrupt:
