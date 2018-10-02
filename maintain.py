@@ -6,7 +6,7 @@ import logging
 import os
 from datetime import datetime
 
-from utils import my_log, read_posts
+from utils import get_comment, my_log, read_posts, write_posts
 
 cdname = os.path.dirname(__file__)
 # 1: old, 2: new
