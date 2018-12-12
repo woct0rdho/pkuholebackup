@@ -12,7 +12,7 @@ from datetime import datetime
 import requests
 import user_agent
 
-import filewithlock
+from filewithlock import open_with_lock, release_lock
 
 get_list_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getlist&p={}'
 get_comment_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getcomment&pid={}'
@@ -40,8 +40,16 @@ def sigint_handler(signum, frame):
 signal.signal(signal.SIGINT, sigint_handler)
 
 
+def internet_on():
+    try:
+        requests.get('https://www.baidu.com', timeout=5)
+    except ConnectionError:
+        return False
+    return True
+
+
 def trim_lines(s):
-    return '\n'.join(map(lambda x: ' '.join(x.split()), s.splitlines())) + '\n'
+    return '\n'.join([' '.join(x.split()) for x in s.splitlines()]) + '\n'
 
 
 def parse_metadata(line):
@@ -59,7 +67,7 @@ def parse_metadata(line):
         int(t[5]),
         'text':
         '',
-        'comments': []
+        'comments': [],
     }
 
 
@@ -73,14 +81,14 @@ def parse_comment_metadata(line):
             datetime.strptime('{} {}'.format(t[2], t[3]),
                               '%Y-%m-%d %H:%M:%S').timestamp()),
         'text':
-        ''
+        '',
     }
 
 
 def read_posts(filename):
     line_list = None
     try:
-        with filewithlock.open(filename, 'r', encoding='utf-8') as f:
+        with open_with_lock(filename, 'r', encoding='utf-8') as f:
             line_list = f.read().splitlines()
     except Exception as e:
         my_log('File {} read error: {}'.format(filename, e))
@@ -117,7 +125,7 @@ def read_posts(filename):
 def read_posts_dict(filename):
     line_list = None
     try:
-        with filewithlock.open(filename, 'r', encoding='utf-8') as f:
+        with open_with_lock(filename, 'r', encoding='utf-8') as f:
             line_list = f.read().splitlines()
     except Exception as e:
         my_log('File {} read error: {}'.format(filename, e))
@@ -161,8 +169,7 @@ def post_dict_to_list(post_dict):
 
     post_list = []
     last_time = 0
-    sort_keys = sorted(post_dict)
-    for pid in range(sort_keys[-1], sort_keys[0] - 1, -1):
+    for pid in range(max(post_dict), min(post_dict) - 1, -1):
         if post_dict.get(pid):
             post_list.append(post_dict[pid])
             last_time = post_dict[pid]['timestamp']
@@ -173,8 +180,9 @@ def post_dict_to_list(post_dict):
                 'likenum': -1,
                 'reply': -1,
                 'text': '#MISSED\n\n',
-                'comments': []
+                'comments': [],
             })
+
     return post_list
 
 
@@ -183,7 +191,7 @@ def write_posts(filename, posts):
     if dirname and not os.path.exists(dirname):
         os.makedirs(dirname)
 
-    with filewithlock.open(filename, 'w', encoding='utf-8', newline='\n') as g:
+    with open_with_lock(filename, 'w', encoding='utf-8', newline='\n') as g:
         for post in posts:
             g.write('#p {} {} {} {}\n{}'.format(
                 post['pid'],
@@ -198,8 +206,56 @@ def write_posts(filename, posts):
                     comment['text']))
 
 
+def get_page(post_dict, page, min_pid):
+    for retry_count in range(10):
+        try:
+            r = requests.get(
+                get_list_api.format(page),
+                headers={'User-Agent': user_agent.generate_user_agent()},
+                timeout=5)
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt
+        except Exception as e:
+            my_log('{}'.format(e))
+        else:
+            if r.status_code == 200:
+                break
+            else:
+                my_log('Status {}'.format(r.status_code))
+        time.sleep(5 + random.random())
+        my_log('Page {} retry {}'.format(page, retry_count))
+    else:
+        raise Exception('Request error')
+    time.sleep(0.5 + random.random() * 0.5)
+
+    r.encoding = 'utf-8'
+    try:
+        data = r.json()
+    except Exception as e:
+        raise e
+
+    if not data.get('data'):
+        # Finished
+        return True
+
+    for post in data['data']:
+        pid = int(post['pid'])
+        if pid <= min_pid:
+            return True
+
+        post_dict[pid] = {
+            'pid': pid,
+            'timestamp': int(post['timestamp']),
+            'likenum': int(post['likenum']),
+            'reply': int(post['reply']),
+            'text': trim_lines(post['text']) + '\n',
+            'comments': [],
+        }
+
+    return False
+
+
 def get_comment(post):
-    request_success = False
     for retry_count in range(10):
         try:
             r = requests.get(
@@ -212,16 +268,15 @@ def get_comment(post):
             my_log('{}'.format(e))
         else:
             if r.status_code == 200:
-                request_success = True
                 break
             else:
                 my_log('Status {}'.format(r.status_code))
         time.sleep(5 + random.random())
         my_log('Post {} retry {}'.format(post['pid'], retry_count))
-    if not request_success:
+    else:
         raise Exception('Post {} request failed'.format(post['pid']))
-
     time.sleep(0.5 + random.random() * 0.5)
+
     r.encoding = 'utf-8'
     try:
         data = r.json()
@@ -238,7 +293,7 @@ def get_comment(post):
         post['comments'].append({
             'cid': int(comment['cid']),
             'timestamp': int(comment['timestamp']),
-            'text': trim_lines(comment['text']) + '\n'
+            'text': trim_lines(comment['text']) + '\n',
         })
     post['reply'] = len(post['comments'])
 
@@ -252,5 +307,5 @@ def clean_comment(post):
 
 def force_remove(filename):
     os.remove(filename)
-    filewithlock.release_lock(filename + '.readlock')
-    filewithlock.release_lock(filename + '.writelock')
+    release_lock(filename + '.readlock')
+    release_lock(filename + '.writelock')

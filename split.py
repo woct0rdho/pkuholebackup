@@ -27,12 +27,10 @@ if __name__ == '__main__':
         max_timestamp = int(
             datetime.combine(out_date + timedelta(1),
                              datetime.min.time()).timestamp())
-        write_posts(
-            archive_filename,
-            map(
-                get_comment,
-                filter(lambda post: post['timestamp'] < max_timestamp,
-                       read_posts(filename))))
+        write_posts(archive_filename, [
+            get_comment(post) for post in read_posts(filename)
+            if post['timestamp'] < max_timestamp
+        ])
     except Exception as e:
         my_log('Error: {}'.format(e))
         force_remove(archive_filename)

@@ -6,7 +6,7 @@ from check import check_file, max_missed_pid
 from utils import my_log
 
 cdname = os.path.dirname(__file__)
-archive_dir = os.path.join(cdname, 'archive', '201810')
+archive_dir = os.path.join(cdname, 'archive', '201812')
 
 if __name__ == '__main__':
     last_pid = None
@@ -20,5 +20,5 @@ if __name__ == '__main__':
                 if (last_pid and oldest_pid > last_pid + 1
                         and oldest_pid < last_pid + max_missed_pid):
                     for i in range(last_pid + 1, oldest_pid):
-                        my_log('{} {} MISSED BETWEEN FILES'.format(i, file))
+                        my_log('{} {} MISSED between files'.format(i, file))
                 last_pid = oldest_pid

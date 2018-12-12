@@ -5,11 +5,11 @@ from datetime import datetime
 
 from utils import my_log, read_posts
 
-cdname = os.path.dirname(__file__)
-filename = os.path.join(cdname, 'pkuhole.txt')
-
 max_missed_pid = 100
 default_reply = -1
+
+cdname = os.path.dirname(__file__)
+filename = os.path.join(cdname, 'pkuhole.txt')
 
 
 def check_file(filename):
@@ -24,7 +24,7 @@ def check_file(filename):
             post['timestamp']).strftime('%Y-%m-%d %H:%M:%S')
         if last_pid and pid > last_pid + 1 and pid < last_pid + max_missed_pid:
             for i in range(last_pid + 1, pid):
-                my_log('{} {} REALLY MISSED'.format(i, time_str))
+                my_log('{} {} really MISSED'.format(i, time_str))
         last_pid = pid
         first_line = post['text'].splitlines()[0]
         if first_line == '#DELETED':
@@ -34,7 +34,7 @@ def check_file(filename):
         if default_reply is not False and (
                 post['reply'] != default_reply
                 and post['reply'] != len(post['comments'])):
-            my_log('{} {} REPLY NOT MATCH {} {}'.format(
+            my_log('{} {} replies not match {} {}'.format(
                 pid, time_str, post['reply'], len(post['comments'])))
 
     oldest_pid = post_list[0]['pid']
