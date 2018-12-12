@@ -2,7 +2,6 @@
 #
 # DELETED posts must have latest comments
 
-import logging
 from datetime import date, datetime, timedelta
 
 from update import filename as update_filename
@@ -17,12 +16,6 @@ from utils import write_posts as _write_posts
 
 day_count = 2
 default_reply = -1
-
-logging.getLogger().handlers = []
-logging.basicConfig(
-    handlers=[logging.FileHandler('maintain.out', 'w', 'utf-8')],
-    level=logging.INFO,
-    format='%(asctime)s %(message)s')
 
 
 def _get_comment_fake(post):
