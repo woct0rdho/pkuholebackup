@@ -209,7 +209,7 @@ if __name__ == '__main__':
     ]
 
     if post_list:
-        min_pid = post_list[-1]['pid']
+        min_pid = post_list[-1]['pid'] - 1
     else:
         # May change
         min_pid = 32859
