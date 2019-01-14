@@ -6,7 +6,7 @@ from check import check_file, max_missed_pid
 from utils import my_log
 
 cdname = os.path.dirname(__file__)
-archive_dir = os.path.join(cdname, 'archive', '201812')
+archive_dir = os.path.join(cdname, 'archive', '201901')
 
 if __name__ == '__main__':
     last_pid = None
