@@ -35,11 +35,12 @@ def open_with_lock(filename, mode='r', **kwargs):
     else:
         raise ValueError('invalid mode: \'{}\''.format(mode))
 
-    with open(filename, mode, **kwargs) as f:
-        yield f
-
-    if mode == 'r':
-        release_lock(filename + '.writelock')
-    elif mode == 'w':
-        release_lock(filename + '.readlock')
-        release_lock(filename + '.writelock')
+    try:
+        with open(filename, mode, **kwargs) as f:
+            yield f
+    finally:
+        if mode == 'r':
+            release_lock(filename + '.writelock')
+        elif mode == 'w':
+            release_lock(filename + '.readlock')
+            release_lock(filename + '.writelock')

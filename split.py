@@ -11,7 +11,7 @@ archive_dir = os.path.join(cdname, 'archive')
 archive_basename = 'pkuhole'
 archive_extname = '.txt'
 
-day_count = 3
+day_count = 2
 
 if __name__ == '__main__':
     out_date = date.today() - timedelta(day_count)
