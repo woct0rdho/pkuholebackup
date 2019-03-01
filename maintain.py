@@ -47,7 +47,7 @@ def compare_reply(post1, post2, out_list, pid, time_str):
             elif post1['reply'] > post2['reply']:
                 my_log('{} {} more replies\n{}'.format(pid, time_str,
                                                        post1['text'].strip()))
-                out_list.append(post1)
+                out_list.append(get_comment(post1))
             else:
                 out_list.append(post1)
 

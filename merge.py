@@ -5,10 +5,9 @@ import os
 from utils import my_log, read_posts, write_posts
 
 cdname = os.path.dirname(__file__)
-# 1: old, 2: new
-input_dir1 = os.path.join(cdname, 'archive')
-input_dir2 = os.path.join(cdname, 'archivebak')
-output_dir = os.path.join(cdname, 'archive')
+in_filename1 = os.path.join(cdname, 'pkuhole.txt')
+in_filename2 = os.path.join(cdname, 'pkuhole2.txt')
+out_filename = os.path.join(cdname, 'pkuholeout.txt')
 
 
 # True: keep post1, False: keep post2
@@ -36,9 +35,9 @@ def cmp(post1, post2):
         return False
 
 
-def merge_file(filename):
-    post_list1 = read_posts(filename.replace(input_dir2, input_dir1))
-    post_list2 = read_posts(filename)
+def merge_file(in_filename1, in_filename2, out_filename):
+    post_list1 = read_posts(in_filename1)
+    post_list2 = read_posts(in_filename2)
     out_list = []
     i = 0
     j = 0
@@ -54,16 +53,16 @@ def merge_file(filename):
                 out_list.append(post_list1[i])
             else:
                 out_list.append(post_list2[j])
+            if len(post_list1[i]['comments']) > len(post_list2[j]['comments']):
+                out_list[-1]['comments'] = post_list1[i]['comments']
+            else:
+                out_list[-1]['comments'] = post_list2[j]['comments']
             i += 1
             j += 1
     out_list += post_list1[i:]
     out_list += post_list2[j:]
-    write_posts(filename.replace(input_dir2, output_dir), out_list)
+    write_posts(out_filename, out_list)
 
 
 if __name__ == '__main__':
-    for root, dirs, files in os.walk(input_dir2):
-        for file in sorted(files):
-            filename = os.path.join(root, file)
-            my_log(filename)
-            merge_file(filename)
+    merge_file(in_filename1, in_filename2, out_filename)
