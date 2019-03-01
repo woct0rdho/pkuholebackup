@@ -10,12 +10,20 @@ import time
 from datetime import datetime
 
 import requests
-import user_agent
+# import user_agent
 
 from filewithlock import open_with_lock, release_lock
 
-get_list_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getlist&p={}'
-get_comment_api = 'http://www.pkuhelper.com/services/pkuhole/api.php?action=getcomment&pid={}'
+get_list_api = 'http://www.pkuhelper.com:10301/services/pkuhole/api.php?action=getlist&p={}'
+get_comment_api = 'http://www.pkuhelper.com:10301/services/pkuhole/api.php?action=getcomment&pid={}'
+
+# headers = {'User-Agent': user_agent.generate_user_agent()}
+headers = {
+    'X-PKUHelper-API': '2.0',
+    'Connection': 'Keep-Alive',
+    'Accept-Encoding': 'gzip',
+    'User-Agent': 'okhttp/3.4.1',
+}
 
 logging.getLogger().handlers = []
 logging.basicConfig(
@@ -210,9 +218,7 @@ def get_page(post_dict, page, min_pid):
     for retry_count in range(10):
         try:
             r = requests.get(
-                get_list_api.format(page),
-                headers={'User-Agent': user_agent.generate_user_agent()},
-                timeout=5)
+                get_list_api.format(page), headers=headers, timeout=5)
         except KeyboardInterrupt:
             raise KeyboardInterrupt
         except Exception as e:
@@ -260,7 +266,7 @@ def get_comment(post):
         try:
             r = requests.get(
                 get_comment_api.format(post['pid']),
-                headers={'User-Agent': user_agent.generate_user_agent()},
+                headers=headers,
                 timeout=5)
         except KeyboardInterrupt:
             raise KeyboardInterrupt
@@ -306,6 +312,7 @@ def clean_comment(post):
 
 
 def force_remove(filename):
-    os.remove(filename)
+    if os.path.exists(filename):
+        os.remove(filename)
     release_lock(filename + '.readlock')
     release_lock(filename + '.writelock')
