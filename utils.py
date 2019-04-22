@@ -14,8 +14,8 @@ import requests
 
 from filewithlock import open_with_lock, release_lock
 
-get_list_api = 'http://www.pkuhelper.com:10301/services/pkuhole/api.php?action=getlist&p={}'
-get_comment_api = 'http://www.pkuhelper.com:10301/services/pkuhole/api.php?action=getcomment&pid={}'
+get_list_api = 'http://pkuhelper.pku.edu.cn/services/pkuhole/api.php?action=getlist&p={}'
+get_comment_api = 'http://pkuhelper.pku.edu.cn/services/pkuhole/api.php?action=getcomment&pid={}'
 
 # headers = {'User-Agent': user_agent.generate_user_agent()}
 headers = {
