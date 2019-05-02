@@ -1,3 +1,41 @@
+#p 694906 2019-05-03 03:50:56 1 0
+我现在流落在一座陌生城市的街头，在剧院外的角落里躲避大风，等待日出，听诗。我正在度过奇妙的一夜。
+
+#p 694905 2019-05-03 03:02:32 1 0
+我知道跳一跳9999怎么做的了
+var a=9999;
+var t=gd(0);
+var b=fs(a,pd(0,cd(0,t)));
+var s1=gs()+"game_id=" + 481439992 + "&game_score=" + b + "&device_type=" + "apple" + "&timestamp=" + t;
+var s2="game_id=" + 481439992 + "&game_score=" + b + "&device_type=" + "apple" + "&timestamp=" + t+"&sign="+md5(s1);
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://gm4814399920.g.ddgaoxing.com/GameAjax/CommitScore',true);
+xhr.setRequestHeader("Content-Type"," application/x-www-form-urlencoded");
+xhr.setRequestHeader("X-Requested-With"," XMLHttpRequest");
+xhr.send(s2);
+
+#p 694904 2019-05-03 02:57:30 1 0
+真实的感受到什么叫头痛欲裂。
+
+#p 694903 2019-05-03 02:47:00 2 1
+都闭上眼睛准备睡觉了又被拉了起来…饶了我吧，真的动不了了…
+
+#p 694902 2019-05-03 02:45:43 1 0
+45乙634是住了一群什么神仙，现在在大吼大叫，整个走廊都能听得见，太没素质了吧
+
+#p 694901 2019-05-03 02:39:25 1 2
+有人能和dz聊聊天吗
+
+#p 694900 2019-05-03 02:28:45 1 0
+深夜胃胀睡不着
+感叹一下
+快大四了，感觉大学遇不到喜欢的男孩子了………
+
+#p 694899 2019-05-03 02:16:48 1 0
+求你别给我发消息了
+真的很烦
+谢谢
+
 #p 694898 2019-05-03 02:01:37 1 0
 我怎么大四了还出这么低级的bug...我好菜啊
 
