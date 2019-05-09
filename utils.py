@@ -57,8 +57,10 @@ def internet_on():
 
 
 def trim_lines(s):
-    return '\n'.join([' '.join(x.split()) for x in s.splitlines()]) + '\n'
-
+    return '\n'.join([
+        ' '.join(('#' + x if x.startswith('#') else x).split())
+        for x in s.splitlines()
+    ]) + '\n'
 
 def parse_metadata(line):
     t = line.split()
