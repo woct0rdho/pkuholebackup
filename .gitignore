@@ -1,4 +1,5 @@
 *.log
 *.py
 *.pyc
-__pycache__
+__pycache_
+err.txt
