@@ -1,8 +1,6 @@
 # dlpkuhole2
 P大树洞备份 https://github.com/martinwu42/dlpkuhole2
 
-[最新树洞](https://github.com/martinwu42/dlpkuhole2/blob/master/pkuhole.txt) [历史树洞](https://github.com/martinwu42/dlpkuhole2/tree/master/archive) [被删树洞](https://github.com/martinwu42/dlpkuhole2/search?o=desc&p=1&q=DELETED&s=indexed)
-
 请合理使用 GitHub 的搜索功能，目前可以搜索树洞号和英文关键词，但是对中文关键词的支持不是很好
 
 如果你发现有树洞或评论没有备份下来，请发 issue
