@@ -143,8 +143,11 @@ Love is patient; love is kind
 #p 721521 2019-05-31 01:53:46 1 0
 刚刚看完hf2，这也太黑深残了吧，樱也太惨了吧，尺度也太大了吧…真的能上映吗…？
 
-#p 721520 2019-05-31 01:53:37 1 0
+#p 721520 2019-05-31 01:53:37 2 1
 怎么样才能认识基友啊
+
+#c 2449396 2019-05-31 04:37:11
+[Alice] boy版啊
 
 #p 721519 2019-05-31 01:47:06 1 0
 我走过长长的一年四季
@@ -259,7 +262,7 @@ Love is patient; love is kind
 #c 2449220 2019-05-31 01:35:03
 [洞主] 还和憨憨一样踏步式过楼道
 
-#p 721508 2019-05-31 01:25:15 4 5
+#p 721508 2019-05-31 01:25:15 5 6
 在software.pku.edu.cn上下载了个matlab，是个ISO文件，怎么打开呢
 
 #c 2449188 2019-05-31 01:26:33
@@ -276,6 +279,9 @@ Love is patient; love is kind
 
 #c 2449216 2019-05-31 01:34:18
 [Carol] 双击...光盘映像
+
+#c 2449397 2019-05-31 04:38:41
+[Dave] MATLAB应该是有两个DVD的, 你看看你下载了几个
 
 #p 721507 2019-05-31 01:23:09 4 7
 I hurt my mom deeply, with harsh words, and I feel really sorry. However, I’m still in a rebellious period (although not the appropriate age) and I do feel uncomfortable the way she treats me. Also, I judge her very much, from her clothes to what she should do as a mom.
