@@ -1,4 +1,4 @@
-# dlpkuhole2
+# pkuholebackup
 P大树洞备份 https://github.com/martinwu42/pkuholebackup
 
 请合理使用 GitHub 的搜索功能，目前可以搜索树洞号和英文关键词，但是对中文关键词的支持不是很好
