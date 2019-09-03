@@ -1245,7 +1245,7 @@ Wx：x1453229367
 太苦恼了
 838509
 
-#p 840332 2019-09-03 23:05:50 1 0
+#p 840332 2019-09-03 23:05:50 2 0
 求问普通统计学需要高数基础吗...文科萌新选会不会很难？
 
 #p 840331 2019-09-03 23:05:26 2 1
@@ -12888,7 +12888,7 @@ wdnmd
 #c 2921427 2019-09-03 14:02:57
 [Alice] 世文地开卷吧
 
-#p 839452 2019-09-03 13:49:42 5 2
+#p 839452 2019-09-03 13:49:42 4 2
 Woke up in the morning and realized inertia was the only thing that kept me going
 It’s funny how I need an inner rally to drag myself out the door
 I’m tired I’m drained, and I just really, really need someone to tell me I’m not alone right now
