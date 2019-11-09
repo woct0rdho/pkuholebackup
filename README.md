@@ -3,6 +3,8 @@ P大树洞备份 https://github.com/martinwu42/pkuholebackup
 
 友情链接：https://t.me/pkuhole
 
+由于本人即将毕业，备份将逐步停止，但是做这个的应该不只有我一个人吧
+
 请合理使用 GitHub 的搜索功能，目前可以搜索树洞号和英文关键词，但是对中文关键词的支持不是很好
 
 如果你发现有树洞或评论没有备份下来，请发 issue
