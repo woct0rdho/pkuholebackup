@@ -3,7 +3,7 @@ P大树洞备份 https://github.com/martinwu42/pkuholebackup
 
 友情链接：
 
-https://pkuhole.com/
+https://pkuhollow.com/
 
 https://github.com/AowuCat/PKUHoleRecorder
 
