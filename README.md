@@ -22,3 +22,11 @@ https://github.com/AowuCat/PKUHoleRecorder
 如果你 fork 了，记得及时更新
 
 在使用爬虫时，请不要对服务器造成太大的压力
+
+备用下载地址：
+
+magnet:?xt=urn:btih:828a20bc9859a0f9ac413b9e97b84cd62a38a824
+
+https://ipfs.io/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
+
+BT网络和IPFS网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
