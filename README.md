@@ -29,4 +29,6 @@ magnet:?xt=urn:btih:828a20bc9859a0f9ac413b9e97b84cd62a38a824
 
 https://ipfs.io/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
 
-BT网络和IPFS网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
+https://app.blackhole.run/#b96b463ca31PD9AEUA3rqwT5JYyMBB7YdfxNYgaYWZFp
+
+BT和IPFS等分布式网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
