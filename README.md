@@ -12,7 +12,7 @@ P大树洞备份 https://github.com/woct0rdho/pkuholebackup
 
 为了避免安全问题，目前不支持备份图片、音频
 
-由于 commit 数量很多，clone 时请加上`--depth 1`
+由于 commit 数量很多，clone 时请加上 `--filter=blob:none`
 
 由于我懒得写，commit message 全是随机的字符串
 
@@ -20,12 +20,14 @@ P大树洞备份 https://github.com/woct0rdho/pkuholebackup
 
 在使用爬虫时，请不要对服务器造成太大的压力
 
-# 备用下载地址
+## 备用下载地址
 
 magnet:?xt=urn:btih:828a20bc9859a0f9ac413b9e97b84cd62a38a824
 
-https://cloudflare-ipfs.com/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
+https://cf-ipfs.com/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
 
 https://app.blackhole.run/#b96b463ca31PD9AEUA3rqwT5JYyMBB7YdfxNYgaYWZFp
 
-BT和IPFS等分布式网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
+BT 和 IPFS 等分布式网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
+
+本页面已经在 https://web.archive.org/ 备份
