@@ -28,4 +28,4 @@ https://cf-ipfs.com/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
 
 BT 和 IPFS 等分布式网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
 
-本页面已经在 https://web.archive.org/ 备份
+本页面已经在 https://web.archive.org/ 和其他地方备份
