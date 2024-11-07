@@ -24,7 +24,9 @@ P大树洞备份 https://github.com/woct0rdho/pkuholebackup
 
 magnet:?xt=urn:btih:828a20bc9859a0f9ac413b9e97b84cd62a38a824
 
-https://cf-ipfs.com/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
+https://ipfs.io/ipfs/QmcmaLatTt442fpf2bFr5wn3WVZGypKgNCjize8kq35Ri7
+
+https://arweave.net/ZfOQITlwAh2usQiW3v_0qBtTCJS5DOVMvwXkmfK-fEQ
 
 BT 和 IPFS 等分布式网络上的东西只要有人做种就能永久保存，即使是我本人也无法完全删除
 
