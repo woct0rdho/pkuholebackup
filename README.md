@@ -2,7 +2,7 @@
 
 P大树洞备份 https://github.com/woct0rdho/pkuholebackup
 
-友情链接：未名树洞 北大树洞最新地址 https://www.pkuhollow.com/
+友情链接：未名树洞 北大树洞最新地址 https://web.pkuhollow.com/
 
 由于本人即将毕业，备份将逐步停止，但是做这个的应该不只有我一个人吧
 
